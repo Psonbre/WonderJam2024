@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://myxxv60jcpcy"]
+
+[node name="Line2D" type="Line2D"]
+points = PackedVector2Array(10, 10, 10, -10, -10, -10, -10, 10)
+closed = true
+width = 0.42
+joint_mode = 2
+end_cap_mode = 2
