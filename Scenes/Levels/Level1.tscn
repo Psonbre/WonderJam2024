@@ -1,0 +1,58 @@
+[gd_scene load_steps=10 format=3 uid="uid://cyx41npt4n1kn"]
+
+[ext_resource type="PackedScene" uid="uid://dyrv4i083tx3b" path="res://Scenes/player.tscn" id="1_q7mb7"]
+[ext_resource type="PackedScene" uid="uid://kjgao5p8jhrp" path="res://Scenes/PuzzlePieces/Pirates/puzzle_piece1.tscn" id="2_o2emm"]
+[ext_resource type="PackedScene" uid="uid://bvlsm2vinukis" path="res://Scenes/PuzzlePieces/Pirates/puzzle_piece2.tscn" id="3_pbm8q"]
+[ext_resource type="PackedScene" uid="uid://dspxq5urbfr3x" path="res://Scenes/PuzzlePieces/Pirates/puzzle_piece3.tscn" id="4_g6q54"]
+[ext_resource type="Shader" path="res://Scenes/vortex.gdshader" id="5_3rwsq"]
+[ext_resource type="Texture2D" uid="uid://cph5l5ltrh8xo" path="res://icon.svg" id="6_qh8qp"]
+[ext_resource type="FontFile" uid="uid://b51e4e1htly8h" path="res://Assets/Fonts/PressStart2P-Regular.ttf" id="7_8iyfl"]
+[ext_resource type="Script" path="res://Scripts/level_name.gd" id="8_8nxnl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2jvcx"]
+shader = ExtResource("5_3rwsq")
+shader_parameter/bottom_color = Color(0, 0, 0, 1)
+shader_parameter/wave_amp = 0.011
+shader_parameter/wave_size = 1.0
+shader_parameter/wave_time_mul = 0.271
+shader_parameter/total_phases = 20
+shader_parameter/color_speed = 0.01
+shader_parameter/color_value = 0.537
+
+[node name="Game" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+zoom = Vector2(1.135, 1.135)
+
+[node name="Player" parent="." instance=ExtResource("1_q7mb7")]
+z_index = 11
+position = Vector2(149, 285)
+scale = Vector2(1, 1)
+
+[node name="PuzzlePiece" parent="." instance=ExtResource("2_o2emm")]
+position = Vector2(155, 311)
+
+[node name="PuzzlePiece2" parent="." instance=ExtResource("3_pbm8q")]
+position = Vector2(840, 306)
+
+[node name="PuzzlePiece3" parent="." instance=ExtResource("4_g6q54")]
+position = Vector2(496, 312)
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -70
+material = SubResource("ShaderMaterial_2jvcx")
+position = Vector2(646, 382)
+scale = Vector2(11.505, 11.505)
+texture = ExtResource("6_qh8qp")
+
+[node name="LevelName" type="Label" parent="."]
+z_index = -30
+offset_left = 358.0
+offset_top = 48.0
+offset_right = 470.0
+offset_bottom = 71.0
+scale = Vector2(2.71, 2.71)
+theme_override_fonts/font = ExtResource("7_8iyfl")
+text = "Level 1"
+script = ExtResource("8_8nxnl")

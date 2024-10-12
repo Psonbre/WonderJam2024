@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://b0c43sr0v666w"]
+[gd_scene load_steps=20 format=4 uid="uid://b0c43sr0v666w"]
 
 [ext_resource type="Script" path="res://Scripts/puzzle_piece.gd" id="1_kspp0"]
 [ext_resource type="Texture2D" uid="uid://cp1jwkshqvg4t" path="res://Assets/pieces_sprites/piece.png" id="2_kfp4e"]
@@ -40,11 +40,11 @@ size = Vector2(149, 164)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_20ux4"]
 shader = ExtResource("2_l11ur")
-shader_parameter/max_line_width = 6.0
+shader_parameter/max_line_width = 4.0
 shader_parameter/min_line_width = 1.0
 shader_parameter/freq = 3.0
 shader_parameter/block_size = 20.0
-shader_parameter/outline_colour = Vector4(0, 0, 0, 1)
+shader_parameter/outline_colour = Vector4(1, 1, 1, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hs13t"]
 shader = ExtResource("4_hn1bs")
@@ -511,12 +511,6 @@ tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_6rph2")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1dgen"]
-size = Vector2(200, 49)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_prdt6"]
-size = Vector2(98, 7)
-
 [node name="PuzzlePiece" type="Area2D" groups=["PuzzlePieces"]]
 script = ExtResource("1_kspp0")
 
@@ -656,19 +650,6 @@ tile_set = SubResource("TileSet_j4ljc")
 
 [node name="Collisions" type="StaticBody2D" parent="."]
 position = Vector2(-28, -12)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions"]
-position = Vector2(28, -63.5)
-shape = SubResource("RectangleShape2D_1dgen")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Collisions"]
-position = Vector2(28, 87)
-shape = SubResource("RectangleShape2D_1dgen")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Collisions"]
-position = Vector2(28, 15.5)
-shape = SubResource("RectangleShape2D_prdt6")
-one_way_collision = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

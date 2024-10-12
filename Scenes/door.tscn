@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://01ln0a63bsiq"]
+
+[ext_resource type="Texture2D" uid="uid://bqolhag0ce77y" path="res://Assets/Sprites/7-Objects/2-Door/1-Closed/1.png" id="1_paq6q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w8iru"]
+size = Vector2(12, 58)
+
+[node name="Door" type="Area2D" groups=["Doors"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 19)
+shape = SubResource("RectangleShape2D_w8iru")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_paq6q")
