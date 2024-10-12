@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://ccajj1ji7b6fw"]
+[gd_scene load_steps=7 format=3 uid="uid://ccajj1ji7b6fw"]
 
 [ext_resource type="PackedScene" uid="uid://dyrv4i083tx3b" path="res://Scenes/player.tscn" id="2_senh7"]
 [ext_resource type="PackedScene" uid="uid://b42uf7icl38en" path="res://Scenes/PuzzlePiece2.tscn" id="3_5u85x"]
 [ext_resource type="PackedScene" uid="uid://b0c43sr0v666w" path="res://Scenes/PuzzlePiece.tscn" id="3_gvsjr"]
+[ext_resource type="PackedScene" uid="uid://ddb1fqa5xonvq" path="res://Scenes/PuzzlePiece3.tscn" id="4_mo0um"]
+[ext_resource type="PackedScene" uid="uid://jxq8svwku1hu" path="res://Assets/Sprites/8-Tile-Sets/Variations/PuzzlePiece4.tscn" id="5_4mrau"]
+[ext_resource type="PackedScene" uid="uid://duakkbjjnetku" path="res://Scenes/PuzzlePiece5.tscn" id="6_x1iqh"]
 
 [node name="Game" type="Node2D"]
 
@@ -17,4 +20,13 @@ z_index = 11
 position = Vector2(282, 295)
 
 [node name="Area2D2" parent="." instance=ExtResource("3_5u85x")]
-position = Vector2(445, 270)
+position = Vector2(539, 261)
+
+[node name="Area2D3" parent="." instance=ExtResource("4_mo0um")]
+position = Vector2(798, 266)
+
+[node name="Area2D4" parent="." instance=ExtResource("5_4mrau")]
+position = Vector2(625, 568)
+
+[node name="Area2D5" parent="." instance=ExtResource("6_x1iqh")]
+position = Vector2(944, 517)

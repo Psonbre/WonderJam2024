@@ -23,6 +23,7 @@ func _physics_process(delta):
 
 	# Handle jump.
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
+		animated_sprite_2d.play("Jump");
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
@@ -30,8 +31,10 @@ func _physics_process(delta):
 	var direction = Input.get_axis("Left", "Right")
 	if direction:
 		velocity.x = direction * SPEED
+		animated_sprite_2d.play("Moving");
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		animated_sprite_2d.play("Idle");
 
 	move_and_slide()
 	

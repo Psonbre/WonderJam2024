@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dyrv4i083tx3b"]
+[gd_scene load_steps=48 format=3 uid="uid://dyrv4i083tx3b"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_1gs7j"]
 [ext_resource type="Texture2D" uid="uid://cxn8uflv5qok3" path="res://Assets/Sprites/1-Player-Bomb Guy/1-Idle/1.png" id="3_7swk5"]
@@ -27,9 +27,27 @@
 [ext_resource type="Texture2D" uid="uid://dmewxcq0j4tnc" path="res://Assets/Sprites/1-Player-Bomb Guy/1-Idle/24.png" id="26_2bel1"]
 [ext_resource type="Texture2D" uid="uid://nj8swidjgio" path="res://Assets/Sprites/1-Player-Bomb Guy/1-Idle/25.png" id="27_827sd"]
 [ext_resource type="Texture2D" uid="uid://djqr2t2mdu1n4" path="res://Assets/Sprites/1-Player-Bomb Guy/1-Idle/26.png" id="28_fbacx"]
+[ext_resource type="Texture2D" uid="uid://bwsjx4gmpcfmk" path="res://Assets/Sprites/1-Player-Bomb Guy/4-Jump/1.png" id="28_nbbvo"]
+[ext_resource type="Texture2D" uid="uid://1acqyoeye758" path="res://Assets/Sprites/1-Player-Bomb Guy/4-Jump/2.png" id="29_vci3v"]
+[ext_resource type="Texture2D" uid="uid://cu04ir2ewl4g0" path="res://Assets/Sprites/1-Player-Bomb Guy/4-Jump/3.png" id="30_k27tp"]
+[ext_resource type="Texture2D" uid="uid://dhmcadbvgbyg6" path="res://Assets/Sprites/1-Player-Bomb Guy/4-Jump/4.png" id="31_lddks"]
+[ext_resource type="Texture2D" uid="uid://cbq8k8j0anmpg" path="res://Assets/Sprites/1-Player-Bomb Guy/2-Run/1.png" id="32_3dhix"]
+[ext_resource type="Texture2D" uid="uid://b25gh20g4kqwb" path="res://Assets/Sprites/1-Player-Bomb Guy/2-Run/2.png" id="33_i8wh3"]
+[ext_resource type="Texture2D" uid="uid://bgtk6fx8dt3nc" path="res://Assets/Sprites/1-Player-Bomb Guy/2-Run/3.png" id="34_prv3r"]
+[ext_resource type="Texture2D" uid="uid://b1g7sjycjusuy" path="res://Assets/Sprites/1-Player-Bomb Guy/2-Run/4.png" id="35_37fg7"]
+[ext_resource type="Texture2D" uid="uid://dlcsd621fhuqe" path="res://Assets/Sprites/1-Player-Bomb Guy/2-Run/5.png" id="36_pfxqb"]
+[ext_resource type="Texture2D" uid="uid://cj3jj2vvwv1cu" path="res://Assets/Sprites/1-Player-Bomb Guy/2-Run/6.png" id="37_tp8a8"]
+[ext_resource type="Texture2D" uid="uid://bbprciac2tjx7" path="res://Assets/Sprites/1-Player-Bomb Guy/2-Run/7.png" id="38_6yndn"]
+[ext_resource type="Texture2D" uid="uid://bjmlinr0tr3iy" path="res://Assets/Sprites/1-Player-Bomb Guy/2-Run/8.png" id="39_5ask3"]
+[ext_resource type="Texture2D" uid="uid://c2wqlvq1eauh6" path="res://Assets/Sprites/1-Player-Bomb Guy/2-Run/9.png" id="40_kkihy"]
+[ext_resource type="Texture2D" uid="uid://b57wtu51dd6du" path="res://Assets/Sprites/1-Player-Bomb Guy/2-Run/10.png" id="41_jrd06"]
+[ext_resource type="Texture2D" uid="uid://cxs6s2qsmyjcd" path="res://Assets/Sprites/1-Player-Bomb Guy/2-Run/11.png" id="42_14otv"]
+[ext_resource type="Texture2D" uid="uid://bxth0eyta1rxa" path="res://Assets/Sprites/1-Player-Bomb Guy/2-Run/12.png" id="43_rdkey"]
+[ext_resource type="Texture2D" uid="uid://brdkfwkay6lb5" path="res://Assets/Sprites/1-Player-Bomb Guy/2-Run/13.png" id="44_4s1ss"]
+[ext_resource type="Texture2D" uid="uid://bfmdnx6c3b3d1" path="res://Assets/Sprites/1-Player-Bomb Guy/2-Run/14.png" id="45_27omg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m0ql6"]
-radius = 16.0
+radius = 14.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cgxq4"]
 animations = [{
@@ -116,15 +134,69 @@ animations = [{
 "name": &"Idle",
 "speed": 20.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_nbbvo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_vci3v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_k27tp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_lddks")
+}],
 "loop": true,
 "name": &"Jump",
-"speed": 5.0
+"speed": 20.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("32_3dhix")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_i8wh3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_prv3r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_37fg7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_pfxqb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_tp8a8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_6yndn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_5ask3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_kkihy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_jrd06")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_14otv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_rdkey")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_4s1ss")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_27omg")
+}],
 "loop": true,
 "name": &"Moving",
-"speed": 5.0
+"speed": 30.0
 }]
 
 [node name="Player" type="CharacterBody2D"]
@@ -135,6 +207,7 @@ script = ExtResource("1_1gs7j")
 shape = SubResource("CircleShape2D_m0ql6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.555, 0.555)
+scale = Vector2(0.505, 0.505)
 sprite_frames = SubResource("SpriteFrames_cgxq4")
 animation = &"Jump"
+frame_progress = 0.393408

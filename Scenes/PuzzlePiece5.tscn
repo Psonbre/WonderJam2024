@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=4 uid="uid://duakkbjjnetku"]
+
+[ext_resource type="PackedScene" uid="uid://myxxv60jcpcy" path="res://Assets/Sprites/8-Tile-Sets/Variations/PuzzlePieceTemplate.tscn" id="1_effti"]
+
+[node name="Area2D" instance=ExtResource("1_effti")]
+
+[node name="Background" parent="Node2D" index="0"]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAD+//7/AAAEAAEAAAD+////AAAEAAEAAAD+/wAAAAAEAAEAAAD//wAAAAAEAAEAAAD/////AAAEAAEAAAD///7/AAAEAAEAAAAAAAAAAAAEAAEAAAAAAP//AAAEAAEAAAAAAP7/AAAEAAEAAAABAAAAAAAEAAEAAAABAP//AAAEAAEAAAABAP7/AAAEAAEAAAD+/wEAAAABAAAAAAD//wEAAAABAAAAAAAAAAEAAAABAAAAAAABAAEAAAABAAAAAAA=")
+
+[node name="Platformes" parent="Node2D" index="1"]
+tile_map_data = PackedByteArray("AAD+//7/AAAFAAMAAAD///7/AAAEAAQAAAAAAAAAAAAFAAQAAAA=")
