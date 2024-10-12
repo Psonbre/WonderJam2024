@@ -1,6 +1,7 @@
 class_name Player
 extends CharacterBody2D
 
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
@@ -9,6 +10,7 @@ var default_scale
 
 func _ready():
 	default_scale = global_scale
+	animated_sprite_2d.play("Idle");
 
 func reset_proportions():
 	global_scale = default_scale

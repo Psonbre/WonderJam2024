@@ -11,7 +11,7 @@ extends Area2D
 @onready var right_bound = $PuzzlePiece/RightBound
 @onready var top_bound = $PuzzlePiece/TopBound
 @onready var bottom_bound = $PuzzlePiece/BottomBound
-@onready var sprite = $PuzzlePiece/Sprite2D
+@onready var sprite: Sprite2D = $Node2D
 
 var has_attempted_connection_this_tick := false
 
