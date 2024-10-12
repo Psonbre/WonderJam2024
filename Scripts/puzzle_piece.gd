@@ -29,6 +29,7 @@ var is_connected_bottom := false :
 		$PuzzlePiece/BottomCollider/CollisionShape2D.disabled = value
 
 var is_dragging := false
+static var global_dragging := false
 var is_hovering := false
 var velocity := Vector2.ZERO
 var default_scale := Vector2(1.0, 1.0)
@@ -43,7 +44,7 @@ func _ready():
 	attempt_connection()
 	
 func _process(delta):
-	if Input.is_action_just_pressed("Click") and is_hovering:
+	if Input.is_action_just_pressed("Click") and is_hovering and !global_dragging:
 		start_dragging()
 	elif Input.is_action_just_released("Click") and is_hovering and is_dragging:
 		stop_dragging()
@@ -69,6 +70,7 @@ func start_dragging():
 	sprite.z_index = 10
 	start_drag_position = position
 	is_dragging = true
+	global_dragging = true
 	set_puzzle_piece_collisions_to_foreground(true)
 	for node in $PuzzlePiece/Content.get_children(false):
 		set_collisions_to_foreground(node, true)
@@ -79,11 +81,19 @@ func start_dragging():
 func stop_dragging():
 	sprite.z_index = -1
 	is_dragging = false
+	global_dragging = false
 	set_puzzle_piece_collisions_to_foreground(false)
 	for node in $PuzzlePiece/Content.get_children(true):
 		set_collisions_to_foreground(node, false)
-	for area in get_overlapping_areas():
-		print(area)
+	await get_tree().physics_frame
+	await get_tree().physics_frame
+	for area in $PuzzlePieceOverlap.get_overlapping_areas():
+		if area.get_parent() is PuzzlePiece and area.get_parent() != self:
+			position = start_drag_position
+			await get_tree().physics_frame
+			attempt_connection()
+			return
+		
 	attempt_connection()
 	for piece in get_tree().get_nodes_in_group("PuzzlePieces"):
 		if piece != self : piece.attempt_connection()

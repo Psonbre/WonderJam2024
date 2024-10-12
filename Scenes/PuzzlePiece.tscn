@@ -1,10 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://myxxv60jcpcy"]
+[gd_scene load_steps=13 format=3 uid="uid://myxxv60jcpcy"]
 
 [ext_resource type="Script" path="res://Scripts/puzzle_piece.gd" id="1_rmpnu"]
 [ext_resource type="Texture2D" uid="uid://78fcpax4ltua" path="res://Assets/Jigsaw.png" id="2_4xsa1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_812v4"]
-size = Vector2(204, 204)
+size = Vector2(200, 200)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ym7pf"]
 size = Vector2(2, 20)
@@ -19,7 +19,7 @@ size = Vector2(20, 2)
 size = Vector2(20, 2)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1x6ai"]
-size = Vector2(6.4, 7)
+size = Vector2(5.4, 7)
 
 [sub_resource type="Gradient" id="Gradient_gbxod"]
 offsets = PackedFloat32Array(0.0134228)
@@ -31,6 +31,9 @@ width = 1
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qi8qm"]
 size = Vector2(10, 4.15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wxsww"]
+size = Vector2(149, 164)
 
 [node name="Area2D" type="Area2D" groups=["PuzzlePieces"]]
 script = ExtResource("1_rmpnu")
@@ -45,7 +48,6 @@ scale = Vector2(10, 10)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PuzzlePiece/LeftCollider"]
 position = Vector2(-10.8, 0)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ym7pf")
 
 [node name="RightCollider" type="StaticBody2D" parent="PuzzlePiece"]
@@ -71,7 +73,6 @@ shape = SubResource("RectangleShape2D_1622a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PuzzlePiece/LeftBound"]
 position = Vector2(-11.1, 0.8)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_1x6ai")
 
 [node name="Sprite2D" type="Sprite2D" parent="PuzzlePiece/LeftBound"]
@@ -83,7 +84,8 @@ texture = SubResource("GradientTexture1D_7pyhj")
 [node name="RightBound" type="Area2D" parent="PuzzlePiece"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PuzzlePiece/RightBound"]
-position = Vector2(8.7, 0.7)
+position = Vector2(9.2, 0.7)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_1x6ai")
 
 [node name="Sprite2D" type="Sprite2D" parent="PuzzlePiece/RightBound"]
@@ -96,7 +98,6 @@ texture = SubResource("GradientTexture1D_7pyhj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PuzzlePiece/TopBound"]
 position = Vector2(0, -9.25)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_qi8qm")
 
 [node name="Sprite2D" type="Sprite2D" parent="PuzzlePiece/TopBound"]
@@ -110,7 +111,6 @@ position = Vector2(0, 20)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PuzzlePiece/BottomBound"]
 position = Vector2(0, -8.675)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_qi8qm")
 
 [node name="Sprite2D" type="Sprite2D" parent="PuzzlePiece/BottomBound"]
@@ -125,6 +125,12 @@ texture = SubResource("GradientTexture1D_7pyhj")
 z_index = -1
 scale = Vector2(0.11, 0.11)
 texture = ExtResource("2_4xsa1")
+
+[node name="PuzzlePieceOverlap" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PuzzlePieceOverlap"]
+position = Vector2(-9.5, 10)
+shape = SubResource("RectangleShape2D_wxsww")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
