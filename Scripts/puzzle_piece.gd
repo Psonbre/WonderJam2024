@@ -187,6 +187,7 @@ func set_puzzle_piece_collisions_to_foreground(foreground : bool):
 	set_collisions_to_foreground($PuzzlePiece/RightCollider, foreground)
 	set_collisions_to_foreground($PuzzlePiece/TopCollider, foreground)
 	set_collisions_to_foreground($PuzzlePiece/BottomCollider, foreground)
+	set_collisions_to_foreground($Collisions, foreground)
 	
 	if foreground:
 		is_connected_right = false

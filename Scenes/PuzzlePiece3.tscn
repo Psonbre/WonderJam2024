@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=4 uid="uid://ddb1fqa5xonvq"]
-
-[ext_resource type="PackedScene" uid="uid://myxxv60jcpcy" path="res://Assets/Sprites/8-Tile-Sets/Variations/PuzzlePieceTemplate.tscn" id="1_pcv5m"]
-
-[node name="Area2D" instance=ExtResource("1_pcv5m")]
-
-[node name="Background" parent="Node2D" index="0"]
-y_sort_enabled = true
-tile_map_data = PackedByteArray("AAABAP7/AAACAAIAAAAAAP//AAAAAAQAAAAAAP7/AAAAAAMAAAAAAAAAAAAAAAQAAAAAAAEAAAAAAAQAAAABAAEAAAABAAAAAAD///7/AAABAAEAAAABAP//AAAEAAEAAAABAAAAAAAEAAEAAAD+//7/AAABAAEAAAD+////AAABAAEAAAD+/wAAAAABAAEAAAD+/wEAAAABAAEAAAD//wEAAAABAAEAAAD//wAAAAABAAEAAAD/////AAABAAEAAAA=")
