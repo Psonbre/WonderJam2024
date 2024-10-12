@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://dbstqlhaq3l3j"]
+[gd_scene load_steps=2 format=3 uid="uid://dipejg3o67cl4"]
 
 [ext_resource type="Script" path="res://Scripts/Buttons/levelSelect.gd" id="1_nbh2s"]
 
@@ -11,6 +11,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Button" type="Button" parent="."]
+layout_mode = 0
 text = "Niveau 1"
 script = ExtResource("1_nbh2s")
 

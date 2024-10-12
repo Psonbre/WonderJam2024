@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://myxxv60jcpcy"]
 
 [ext_resource type="Script" path="res://Scripts/puzzle_piece.gd" id="1_lpuac"]
-[ext_resource type="Texture2D" uid="uid://78fcpax4ltua" path="res://Assets/Jigsaw.png" id="2_e2mx2"]
+[ext_resource type="Texture2D" path="res://Assets/Jigsaw.png" id="2_e2mx2"]
 [ext_resource type="Texture2D" uid="uid://10p6j3qrbahm" path="res://Assets/Sprites/8-Tile-Sets/Tile-Sets (64-64).png" id="3_qql8b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_812v4"]
