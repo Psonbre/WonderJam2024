@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://btexkm12jn7f3"]
 
-[ext_resource type="Script" path="res://Scripts/Buttons/PlayButton.gd" id="1_vjjti"]
-[ext_resource type="Script" path="res://Scripts/Buttons/ExitButton.gd" id="2_8o78a"]
+[ext_resource type="Script" path="res://Scripts/Buttons/PlayButton.gd" id="1_t1cdp"]
+[ext_resource type="Script" path="res://Scripts/Buttons/ExitButton.gd" id="2_dbrev"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_b18gn"]
 font_size = 64
@@ -51,13 +51,13 @@ grow_vertical = 2
 [node name="PlayButton" type="Button" parent="VBoxContainer2"]
 layout_mode = 2
 text = "Play"
-script = ExtResource("1_vjjti")
+script = ExtResource("1_t1cdp")
 
 [node name="ExitButton" type="Button" parent="VBoxContainer2"]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 text = "Quit"
-script = ExtResource("2_8o78a")
+script = ExtResource("2_dbrev")
 
 [connection signal="pressed" from="VBoxContainer2/PlayButton" to="VBoxContainer2/PlayButton" method="_on_pressed"]
 [connection signal="pressed" from="VBoxContainer2/ExitButton" to="VBoxContainer2/ExitButton" method="_on_pressed"]
