@@ -2,11 +2,8 @@
 
 [ext_resource type="Script" path="res://Scripts/Pause/PauseManager.gd" id="1_0p1og"]
 [ext_resource type="Theme" uid="uid://c7pr5sn7d52kf" path="res://Assets/Themes/WoodTheme.tres" id="1_7qt1w"]
-[ext_resource type="Texture2D" uid="uid://ct5cs5f5n1clb" path="res://Assets/Wooden Pixel Art GUI 32x32.png" id="2_e2rhf"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_13fbh"]
-atlas = ExtResource("2_e2rhf")
-region = Rect2(286.687, 832.296, 34.485, 32)
+[ext_resource type="Texture2D" uid="uid://lpcw04j58awc" path="res://Assets/Themes/TextureButton/normalPause.tres" id="3_vgpg5"]
+[ext_resource type="Texture2D" uid="uid://d3xn8xiukmo6v" path="res://Assets/Themes/TextureButton/clickedPause.tres" id="4_1nqlf"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_y4cuy"]
 font_size = 64
@@ -24,7 +21,7 @@ grow_vertical = 2
 scale = Vector2(1.2, 1.2)
 script = ExtResource("1_0p1og")
 
-[node name="PauseButton" type="Button" parent="."]
+[node name="PauseButton" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 28.0
 offset_top = 21.0
@@ -33,7 +30,8 @@ offset_bottom = 53.0
 scale = Vector2(1.2, 1.2)
 focus_mode = 0
 theme = ExtResource("1_7qt1w")
-icon = SubResource("AtlasTexture_13fbh")
+texture_normal = ExtResource("3_vgpg5")
+texture_hover = ExtResource("4_1nqlf")
 
 [node name="PausePanel" type="Control" parent="."]
 visible = false
