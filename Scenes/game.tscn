@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ccajj1ji7b6fw"]
 
-[ext_resource type="PackedScene" uid="uid://dyrv4i083tx3b" path="res://player.tscn" id="2_senh7"]
-[ext_resource type="PackedScene" uid="uid://myxxv60jcpcy" path="res://PuzzlePiece.tscn" id="3_gvsjr"]
+[ext_resource type="PackedScene" uid="uid://dyrv4i083tx3b" path="res://Scenes/player.tscn" id="2_senh7"]
+[ext_resource type="PackedScene" uid="uid://myxxv60jcpcy" path="res://Scenes/PuzzlePiece.tscn" id="3_gvsjr"]
 
 [node name="Game" type="Node2D"]
 

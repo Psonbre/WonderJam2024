@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://myxxv60jcpcy"]
 
-[ext_resource type="Script" path="res://puzzle_piece.gd" id="1_rmpnu"]
+[ext_resource type="Script" path="res://Scripts/puzzle_piece.gd" id="1_rmpnu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_812v4"]
 size = Vector2(204, 204)
