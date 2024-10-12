@@ -39,9 +39,11 @@ size = Vector2(149, 164)
 script = ExtResource("1_rmpnu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("RectangleShape2D_812v4")
 
 [node name="PuzzlePiece" type="Node2D" parent="."]
+visible = false
 scale = Vector2(10, 10)
 
 [node name="LeftCollider" type="StaticBody2D" parent="PuzzlePiece"]
@@ -120,16 +122,17 @@ texture = SubResource("GradientTexture1D_7pyhj")
 
 [node name="Content" type="Node2D" parent="PuzzlePiece" groups=["PuzzlePieceContent"]]
 
-[node name="Sprite2D" type="Sprite2D" parent="PuzzlePiece"]
-z_index = -1
-scale = Vector2(0.11, 0.11)
-texture = ExtResource("2_4xsa1")
-
 [node name="PuzzlePieceOverlap" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PuzzlePieceOverlap"]
 position = Vector2(-9.5, 10)
 shape = SubResource("RectangleShape2D_wxsww")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("2_4xsa1")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

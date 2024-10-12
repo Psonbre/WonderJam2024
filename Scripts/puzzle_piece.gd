@@ -11,7 +11,6 @@ extends Area2D
 @onready var right_bound = $PuzzlePiece/RightBound
 @onready var top_bound = $PuzzlePiece/TopBound
 @onready var bottom_bound = $PuzzlePiece/BottomBound
-@onready var sprite = $PuzzlePiece/Sprite2D
 
 var has_attempted_connection_this_tick := false
 
@@ -67,7 +66,7 @@ func _process(delta):
 	has_attempted_connection_this_tick = false
 
 func start_dragging():
-	sprite.z_index = 10
+	z_index = 10
 	start_drag_position = position
 	is_dragging = true
 	global_dragging = true
@@ -83,7 +82,7 @@ func start_dragging():
 		if piece != self : piece.attempt_connection()
 		
 func stop_dragging():
-	sprite.z_index = -1
+	z_index = -1
 	is_dragging = false
 	global_dragging = false
 	set_puzzle_piece_collisions_to_foreground(false)
