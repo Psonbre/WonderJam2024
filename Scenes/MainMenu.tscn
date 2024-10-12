@@ -1,11 +1,10 @@
-[gd_scene load_steps=10 format=4 uid="uid://btexkm12jn7f3"]
+[gd_scene load_steps=9 format=4 uid="uid://btexkm12jn7f3"]
 
 [ext_resource type="Theme" uid="uid://c7pr5sn7d52kf" path="res://Assets/Themes/WoodTheme.tres" id="1_iwg50"]
 [ext_resource type="Script" path="res://Scripts/Buttons/PlayButton.gd" id="1_t1cdp"]
 [ext_resource type="Script" path="res://Scripts/Buttons/ExitButton.gd" id="2_dbrev"]
 [ext_resource type="Script" path="res://Scripts/Buttons/credits_button.gd" id="2_x311k"]
 [ext_resource type="Texture2D" uid="uid://ct5cs5f5n1clb" path="res://Assets/Wooden Pixel Art GUI 32x32.png" id="4_00gkr"]
-[ext_resource type="Texture2D" uid="uid://bijo5vy0cv4fo" path="res://Assets/c365c4d7-53dc-453f-a202-ad239d50fdff_03.png" id="6_5o87j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_72ogu"]
 texture = ExtResource("4_00gkr")
@@ -716,7 +715,6 @@ offset_top = -9.00006
 offset_right = 2895.0
 offset_bottom = 1623.0
 scale = Vector2(0.4, 0.4)
-texture = ExtResource("6_5o87j")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 z_index = 3
