@@ -5,8 +5,15 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 var overlapping_pieces = []
+var default_scale
 
+func _ready():
+	default_scale = global_scale
 
+func reset_proportions():
+	global_scale = default_scale
+	rotation = 0
+	
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
@@ -34,8 +41,9 @@ func _physics_process(delta):
 			if distance < min_distance:
 				min_distance = distance
 				closest_piece = piece
-		if closest_piece != null && (get_parent().get_parent().get_parent() == null || closest_piece != get_parent().get_node("../..")):
+		if closest_piece != null && (find_parent("Content") == null || closest_piece != get_parent().get_node("../..")):
 			reparent(closest_piece.get_node("PuzzlePiece/Content"))
+			reset_proportions()
 
 func add_overlapping_piece(piece : PuzzlePiece):
 	if piece not in overlapping_pieces:
@@ -44,3 +52,6 @@ func add_overlapping_piece(piece : PuzzlePiece):
 func remove_overlapping_piece(piece : PuzzlePiece):
 	if piece in overlapping_pieces:
 		overlapping_pieces.remove_at(overlapping_pieces.find(piece))
+
+func clamp_position_to_piece(piece : PuzzlePiece):
+	global_position = global_position.clamp(piece.global_position - Vector2(100 + 24 , 100 + 24), piece.global_position + Vector2(100 - 24,100 - 24))

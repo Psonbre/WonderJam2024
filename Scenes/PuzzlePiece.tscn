@@ -35,7 +35,7 @@ size = Vector2(10, 4.15)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wxsww"]
 size = Vector2(149, 164)
 
-[node name="Area2D" type="Area2D" groups=["PuzzlePieces"]]
+[node name="PuzzlePiece" type="Area2D" groups=["PuzzlePieces"]]
 script = ExtResource("1_rmpnu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -85,7 +85,6 @@ texture = SubResource("GradientTexture1D_7pyhj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PuzzlePiece/RightBound"]
 position = Vector2(9.2, 0.7)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_1x6ai")
 
 [node name="Sprite2D" type="Sprite2D" parent="PuzzlePiece/RightBound"]

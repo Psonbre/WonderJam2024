@@ -44,4 +44,5 @@ top_connection_slot = -1
 bottom_connection_slot = 1
 
 [node name="Player" parent="." instance=ExtResource("2_senh7")]
-position = Vector2(549, 320)
+z_index = 11
+position = Vector2(552, 355)

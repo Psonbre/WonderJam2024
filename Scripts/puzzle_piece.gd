@@ -74,6 +74,10 @@ func start_dragging():
 	set_puzzle_piece_collisions_to_foreground(true)
 	for node in $PuzzlePiece/Content.get_children(false):
 		set_collisions_to_foreground(node, true)
+	var player = find_child("Player") as Player
+	if player != null:
+		player.set_physics_process(false)
+		player.clamp_position_to_piece(self)
 	attempt_connection()
 	for piece in get_tree().get_nodes_in_group("PuzzlePieces"):
 		if piece != self : piece.attempt_connection()
@@ -85,6 +89,10 @@ func stop_dragging():
 	set_puzzle_piece_collisions_to_foreground(false)
 	for node in $PuzzlePiece/Content.get_children(true):
 		set_collisions_to_foreground(node, false)
+	var player = find_child("Player") as Player
+	if player != null:
+		player.set_physics_process(true)
+		player.clamp_position_to_piece(self)
 	await get_tree().physics_frame
 	await get_tree().physics_frame
 	for area in $PuzzlePieceOverlap.get_overlapping_areas():
@@ -97,6 +105,7 @@ func stop_dragging():
 	attempt_connection()
 	for piece in get_tree().get_nodes_in_group("PuzzlePieces"):
 		if piece != self : piece.attempt_connection()
+	
 
 func attempt_connection():
 	if is_dragging : return
@@ -117,7 +126,7 @@ func attempt_connection():
 		scale = default_scale
 		rotation = 0
 		if has_node("PuzzlePiece/Content/Player"):
-			get_node("PuzzlePiece/Content/Player").global_rotation = 0
+			get_node("PuzzlePiece/Content/Player").reset_proportions()
 	
 	# Check right bound
 	other_piece = get_first_valid_overlap_in_bound(right_bound, "left")
@@ -128,7 +137,7 @@ func attempt_connection():
 		scale = default_scale
 		rotation = 0
 		if has_node("PuzzlePiece/Content/Player"):
-			get_node("PuzzlePiece/Content/Player").global_rotation = 0
+			get_node("PuzzlePiece/Content/Player").reset_proportions()
 	
 	# Check top bound
 	other_piece = get_first_valid_overlap_in_bound(top_bound, "bottom")
@@ -139,7 +148,7 @@ func attempt_connection():
 		scale = default_scale
 		rotation = 0
 		if has_node("PuzzlePiece/Content/Player"):
-			get_node("PuzzlePiece/Content/Player").global_rotation = 0
+			get_node("PuzzlePiece/Content/Player").reset_proportions()
 	
 	# Check bottom bound
 	other_piece = get_first_valid_overlap_in_bound(bottom_bound, "top")
@@ -150,7 +159,7 @@ func attempt_connection():
 		scale = default_scale
 		rotation = 0
 		if has_node("PuzzlePiece/Content/Player"):
-			get_node("PuzzlePiece/Content/Player").global_rotation = 0
+			get_node("PuzzlePiece/Content/Player").reset_proportions()
 	
 func get_first_valid_overlap_in_bound(bound : Area2D, compatible_side : String):
 	var overlapping_areas = bound.get_overlapping_areas()
