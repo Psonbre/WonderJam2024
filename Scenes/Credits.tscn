@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b5ui348xrja2j"]
+[gd_scene load_steps=9 format=3 uid="uid://b5ui348xrja2j"]
 
 [ext_resource type="Script" path="res://Scripts/Buttons/BackScript.gd" id="1_fll2r"]
 
@@ -17,6 +17,13 @@ font_size = 18
 [sub_resource type="LabelSettings" id="LabelSettings_ygtq4"]
 font_size = 18
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6hqfj"]
+load_path = "res://.godot/imported/UI_Font_A.png-d5d907299a4d11332c4ed0ab188252db.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_njb3x"]
+atlas = SubResource("CompressedTexture2D_6hqfj")
+region = Rect2(359, 167, 18, 18)
+
 [node name="Credits" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -25,11 +32,21 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Title" type="Label" parent="."]
+layout_mode = 2
+offset_left = 311.0
+offset_right = 832.0
+offset_bottom = 88.0
+text = "Credits"
+label_settings = SubResource("LabelSettings_56lap")
+horizontal_alignment = 1
+
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 120.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -38,12 +55,6 @@ layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 8
 theme_override_constants/separation = 50
-
-[node name="Title" type="Label" parent="ScrollContainer/VBoxContainer"]
-layout_mode = 2
-text = "Credits"
-label_settings = SubResource("LabelSettings_56lap")
-horizontal_alignment = 1
 
 [node name="Game" type="VBoxContainer" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
@@ -152,10 +163,14 @@ horizontal_alignment = 1
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
 offset_left = 22.0
-offset_top = 18.0
-offset_right = 96.0
-offset_bottom = 53.0
-text = "Back"
+offset_top = 19.0
+offset_right = 52.0
+offset_bottom = 50.0
+text = "
+"
+icon = SubResource("AtlasTexture_njb3x")
+icon_alignment = 1
+expand_icon = true
 script = ExtResource("1_fll2r")
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
