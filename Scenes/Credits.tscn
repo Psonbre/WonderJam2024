@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://b5ui348xrja2j"]
+[gd_scene load_steps=10 format=3 uid="uid://b5ui348xrja2j"]
 
 [ext_resource type="Script" path="res://Scripts/Buttons/BackScript.gd" id="1_fll2r"]
+[ext_resource type="Theme" uid="uid://c7pr5sn7d52kf" path="res://Assets/Themes/WoodTheme.tres" id="2_ki5wm"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_56lap"]
 font_size = 64
@@ -23,6 +24,7 @@ load_path = "res://.godot/imported/UI_Font_A.png-d5d907299a4d11332c4ed0ab188252d
 [sub_resource type="AtlasTexture" id="AtlasTexture_njb3x"]
 atlas = SubResource("CompressedTexture2D_6hqfj")
 region = Rect2(359, 167, 18, 18)
+margin = Rect2(2.5, 3, 5, 5)
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -166,6 +168,9 @@ offset_left = 22.0
 offset_top = 19.0
 offset_right = 52.0
 offset_bottom = 50.0
+scale = Vector2(1.64275, 1.36)
+focus_mode = 0
+theme = ExtResource("2_ki5wm")
 text = "
 "
 icon = SubResource("AtlasTexture_njb3x")
