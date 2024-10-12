@@ -9,18 +9,39 @@
 anchor_mode = 0
 
 [node name="PuzzlePiece" parent="." instance=ExtResource("3_gvsjr")]
-position = Vector2(433, 337)
-left_connection_slot = -2
+position = Vector2(345, 319)
+left_connection_slot = 1
 right_connection_slot = -1
-top_connection_slot = -2
-bottom_connection_slot = -2
+top_connection_slot = -1
+bottom_connection_slot = 1
 
 [node name="PuzzlePiece2" parent="." instance=ExtResource("3_gvsjr")]
-position = Vector2(961, 347)
+position = Vector2(553, 320)
 left_connection_slot = 1
-right_connection_slot = -2
-top_connection_slot = -2
-bottom_connection_slot = -2
+right_connection_slot = -1
+top_connection_slot = -1
+bottom_connection_slot = 1
+
+[node name="PuzzlePiece3" parent="." instance=ExtResource("3_gvsjr")]
+position = Vector2(552, 113)
+left_connection_slot = 1
+right_connection_slot = -1
+top_connection_slot = -1
+bottom_connection_slot = 1
+
+[node name="PuzzlePiece4" parent="." instance=ExtResource("3_gvsjr")]
+position = Vector2(762, 322)
+left_connection_slot = 1
+right_connection_slot = -1
+top_connection_slot = -1
+bottom_connection_slot = 1
+
+[node name="PuzzlePiece5" parent="." instance=ExtResource("3_gvsjr")]
+position = Vector2(555, 523)
+left_connection_slot = 1
+right_connection_slot = -1
+top_connection_slot = -1
+bottom_connection_slot = 1
 
 [node name="Player" parent="." instance=ExtResource("2_senh7")]
-position = Vector2(424, 348)
+position = Vector2(549, 320)

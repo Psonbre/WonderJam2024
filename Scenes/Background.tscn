@@ -1,9 +1,6 @@
-[gd_scene load_steps=4 format=4 uid="uid://cngghdh6vmojs"]
-
-[ext_resource type="Texture2D" path="res://Assets/woodTexture.png" id="1_kmhe8"]
+[gd_scene load_steps=3 format=4 uid="uid://cngghdh6vmojs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xfgim"]
-texture = ExtResource("1_kmhe8")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
