@@ -26,7 +26,7 @@ static func get_level_manager() -> LevelManager:
 # Get the MusicManager instance
 static func get_music_manager() -> MusicManager:
 	if music_manager == null:
-		var music_manager_scene = load("res://Scenes/MusicManager.tscn")
+		var music_manager_scene = load("res://Scenes/Manager/MusicManager.tscn")
 		music_manager = music_manager_scene.instantiate()
 		get_SubsystemManager().root.add_child(music_manager)
 	return music_manager
