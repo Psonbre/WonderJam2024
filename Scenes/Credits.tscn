@@ -1,0 +1,161 @@
+[gd_scene load_steps=7 format=3 uid="uid://b5ui348xrja2j"]
+
+[ext_resource type="Script" path="res://Scripts/Buttons/BackScript.gd" id="1_fll2r"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_56lap"]
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_dvsln"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_grfsm"]
+font_size = 18
+
+[sub_resource type="LabelSettings" id="LabelSettings_byrnl"]
+font_size = 18
+
+[sub_resource type="LabelSettings" id="LabelSettings_ygtq4"]
+font_size = 18
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 8
+theme_override_constants/separation = 50
+
+[node name="Title" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Credits"
+label_settings = SubResource("LabelSettings_56lap")
+horizontal_alignment = 1
+
+[node name="Game" type="VBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="SubTitle" type="Label" parent="ScrollContainer/VBoxContainer/Game"]
+layout_mode = 2
+text = "Game by"
+label_settings = SubResource("LabelSettings_dvsln")
+horizontal_alignment = 1
+
+[node name="Names" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/Game"]
+layout_mode = 2
+
+[node name="Adam" type="Label" parent="ScrollContainer/VBoxContainer/Game/Names"]
+layout_mode = 2
+text = "Adam Maps"
+label_settings = SubResource("LabelSettings_grfsm")
+horizontal_alignment = 1
+
+[node name="Philou" type="Label" parent="ScrollContainer/VBoxContainer/Game/Names"]
+layout_mode = 2
+text = "Philippe St-Laurent-Recoura"
+label_settings = SubResource("LabelSettings_byrnl")
+horizontal_alignment = 1
+
+[node name="Zachary" type="Label" parent="ScrollContainer/VBoxContainer/Game/Names"]
+layout_mode = 2
+text = "Zachary Meunier"
+label_settings = SubResource("LabelSettings_ygtq4")
+horizontal_alignment = 1
+
+[node name="Assets" type="VBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="SubTitle" type="Label" parent="ScrollContainer/VBoxContainer/Assets"]
+layout_mode = 2
+text = "Assets"
+label_settings = SubResource("LabelSettings_dvsln")
+horizontal_alignment = 1
+
+[node name="Names" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/Assets"]
+layout_mode = 2
+
+[node name="Adam" type="Label" parent="ScrollContainer/VBoxContainer/Assets/Names"]
+layout_mode = 2
+text = "Nom des assets
+"
+label_settings = SubResource("LabelSettings_grfsm")
+horizontal_alignment = 1
+
+[node name="Adam2" type="Label" parent="ScrollContainer/VBoxContainer/Assets/Names"]
+layout_mode = 2
+text = "Nom des assets
+"
+label_settings = SubResource("LabelSettings_grfsm")
+horizontal_alignment = 1
+
+[node name="Adam3" type="Label" parent="ScrollContainer/VBoxContainer/Assets/Names"]
+layout_mode = 2
+text = "Nom des assets
+"
+label_settings = SubResource("LabelSettings_grfsm")
+horizontal_alignment = 1
+
+[node name="Adam4" type="Label" parent="ScrollContainer/VBoxContainer/Assets/Names"]
+layout_mode = 2
+text = "Nom des assets
+"
+label_settings = SubResource("LabelSettings_grfsm")
+horizontal_alignment = 1
+
+[node name="Music" type="VBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="SubTitle" type="Label" parent="ScrollContainer/VBoxContainer/Music"]
+layout_mode = 2
+text = "Musique
+"
+label_settings = SubResource("LabelSettings_dvsln")
+horizontal_alignment = 1
+
+[node name="Names" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/Music"]
+layout_mode = 2
+
+[node name="Adam" type="Label" parent="ScrollContainer/VBoxContainer/Music/Names"]
+layout_mode = 2
+text = "Nom des assets
+"
+label_settings = SubResource("LabelSettings_grfsm")
+horizontal_alignment = 1
+
+[node name="Gamejam" type="VBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="SubTitle" type="Label" parent="ScrollContainer/VBoxContainer/Gamejam"]
+layout_mode = 2
+text = "Done during the Wonderjam 2024
+"
+label_settings = SubResource("LabelSettings_dvsln")
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 18.0
+offset_right = 96.0
+offset_bottom = 53.0
+text = "Back"
+script = ExtResource("1_fll2r")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
