@@ -18,8 +18,7 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D"]
-z_index = 50
-scale = Vector2(1.48, 1.48)
+scale = Vector2(1.5, 1.5)
 script = ExtResource("1_1gs7j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
