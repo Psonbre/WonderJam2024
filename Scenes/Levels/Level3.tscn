@@ -20,7 +20,7 @@ shader_parameter/total_phases = 20
 shader_parameter/color_speed = 0.01
 shader_parameter/color_value = 0.537
 
-[node name="Game" type="Node2D"]
+[node name="Level" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0

@@ -1,4 +1,4 @@
 extends Button
 
 func _on_pressed() -> void:
-	SubsystemManager.get_level_manager().load_level("res://Scenes/game.tscn")
+	get_tree().root.get_node("Game").load_level("Level1")

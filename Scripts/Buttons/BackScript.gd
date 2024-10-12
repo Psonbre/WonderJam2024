@@ -1,6 +1,4 @@
 extends Node
 
-
-
 func _on_pressed() -> void:
-	SubsystemManager.get_level_manager().load_level("res://Scenes/MainMenu.tscn")
+	get_tree().root.get_node("Game").load_main_menu()
