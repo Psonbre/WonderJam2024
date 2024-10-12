@@ -200,6 +200,7 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D"]
+z_index = 5
 scale = Vector2(1.5, 1.5)
 script = ExtResource("1_1gs7j")
 
@@ -210,4 +211,4 @@ shape = SubResource("CircleShape2D_m0ql6")
 scale = Vector2(0.505, 0.505)
 sprite_frames = SubResource("SpriteFrames_cgxq4")
 animation = &"Jump"
-frame_progress = 0.393408
+frame_progress = 0.158644

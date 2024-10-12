@@ -11,6 +11,7 @@ anchor_mode = 0
 [node name="Player" parent="." instance=ExtResource("2_senh7")]
 z_index = 11
 position = Vector2(282, 295)
+scale = Vector2(1, 1)
 
 [node name="Area2D" parent="." instance=ExtResource("3_gvsjr")]
 position = Vector2(301, 279)

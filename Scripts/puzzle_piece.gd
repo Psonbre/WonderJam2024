@@ -11,6 +11,9 @@ extends Area2D
 @onready var right_bound = $PuzzlePiece/RightBound
 @onready var top_bound = $PuzzlePiece/TopBound
 @onready var bottom_bound = $PuzzlePiece/BottomBound
+@onready var sprite_outline = $Sprite/SpriteOutline
+@onready var sprite_moving_outline = $Sprite/SpriteMovingOutline
+@onready var content = $PuzzlePiece/Content
 
 var has_attempted_connection_this_tick := false
 
@@ -66,12 +69,13 @@ func _process(delta):
 	has_attempted_connection_this_tick = false
 
 func start_dragging():
+	sprite_moving_outline.visible = true
 	z_index = 10
 	start_drag_position = position
 	is_dragging = true
 	global_dragging = true
 	set_puzzle_piece_collisions_to_foreground(true)
-	for node in $PuzzlePiece/Content.get_children(false):
+	for node in content.get_children(false):
 		set_collisions_to_foreground(node, true)
 	var player = find_child("Player") as Player
 	if player != null:
@@ -82,11 +86,12 @@ func start_dragging():
 		if piece != self : piece.attempt_connection()
 		
 func stop_dragging():
+	sprite_moving_outline.visible = false
 	z_index = -1
 	is_dragging = false
 	global_dragging = false
 	set_puzzle_piece_collisions_to_foreground(false)
-	for node in $PuzzlePiece/Content.get_children(true):
+	for node in content.get_children(true):
 		set_collisions_to_foreground(node, false)
 	var player = find_child("Player") as Player
 	if player != null:
@@ -177,9 +182,13 @@ func get_first_valid_overlap_in_bound(bound : Area2D, compatible_side : String):
 
 func _on_mouse_entered():
 	is_hovering = true
+	if !global_dragging:
+		z_index = 3
 
 func _on_mouse_exited():
 	is_hovering = false
+	if !is_dragging:
+		z_index = -1
 
 func set_puzzle_piece_collisions_to_foreground(foreground : bool):
 	set_collisions_to_foreground(self, foreground)
