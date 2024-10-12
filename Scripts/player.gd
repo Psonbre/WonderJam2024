@@ -37,7 +37,7 @@ func _physics_process(delta):
 		var closest_piece = null
 		var min_distance = INF
 		for piece in overlapping_pieces:
-			var distance = position.distance_to(piece.position)
+			var distance = global_position.distance_to(piece.global_position)
 			if distance < min_distance:
 				min_distance = distance
 				closest_piece = piece
@@ -54,4 +54,5 @@ func remove_overlapping_piece(piece : PuzzlePiece):
 		overlapping_pieces.remove_at(overlapping_pieces.find(piece))
 
 func clamp_position_to_piece(piece : PuzzlePiece):
-	global_position = global_position.clamp(piece.global_position - Vector2(100 + 24 , 100 + 24), piece.global_position + Vector2(100 - 24,100 - 24))
+	#global_position = global_position.clamp(piece.global_position - Vector2(100 + 24 , 100 + 24), piece.global_position + Vector2(100 - 24,100 - 24))
+	return
