@@ -71,6 +71,18 @@ func _process(delta):
 		scale = scale.move_toward(default_scale, 2 * delta)
 	
 	has_attempted_connection_this_tick = false
+	
+func has_all_sides_connected():
+	if !is_connected_bottom && bottom_connection_slot != -2:
+		return false
+	if !is_connected_left && left_connection_slot != -2:
+		return false
+	if !is_connected_right && right_connection_slot != -2:
+		return false
+	if !is_connected_top && top_connection_slot != -2:
+		return false
+	return true
+
 
 func start_dragging():
 	if Player.winning : return
