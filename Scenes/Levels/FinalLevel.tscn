@@ -126,50 +126,62 @@ libraries = {
 script = ExtResource("3_56dvj")
 
 [node name="PuzzlePiece" parent="Pieces" instance=ExtResource("4_le5ph")]
+visible = false
 position = Vector2(233, 854)
 ending_position = Vector2(622, 763)
 
 [node name="PuzzlePiece2" parent="Pieces" instance=ExtResource("5_y6xpo")]
+visible = false
 position = Vector2(1706, 221)
 ending_position = Vector2(817, 763)
 
 [node name="PuzzlePiece3" parent="Pieces" instance=ExtResource("6_cfbi1")]
+visible = false
 position = Vector2(1734, 829)
 ending_position = Vector2(1017, 763)
 
 [node name="PuzzlePiece4" parent="Pieces" instance=ExtResource("7_jnaop")]
+visible = false
 position = Vector2(1118, 919)
 ending_position = Vector2(1212, 763)
 
 [node name="PuzzlePiece5" parent="Pieces" instance=ExtResource("8_bx21f")]
+visible = false
 position = Vector2(434, 561)
 ending_position = Vector2(622, 567)
 
 [node name="PuzzlePiece6" parent="Pieces" instance=ExtResource("9_1lvo3")]
+visible = false
 position = Vector2(622, 895)
 ending_position = Vector2(817, 567)
 
 [node name="PuzzlePiece7" parent="Pieces" instance=ExtResource("10_tu46l")]
+visible = false
 position = Vector2(1440, 819)
 ending_position = Vector2(1017, 567)
 
 [node name="PuzzlePiece8" parent="Pieces" instance=ExtResource("11_nn71p")]
+visible = false
 position = Vector2(1541, 508)
 ending_position = Vector2(1212, 567)
 
 [node name="PuzzlePiece9" parent="Pieces" instance=ExtResource("12_w0u6n")]
+visible = false
 position = Vector2(862, 681)
 ending_position = Vector2(622, 370)
 
 [node name="PuzzlePiece10" parent="Pieces" instance=ExtResource("13_s3qh0")]
+visible = false
 position = Vector2(168, 262)
 ending_position = Vector2(817, 370)
 
 [node name="PuzzlePiece11" parent="Pieces" instance=ExtResource("14_k2yuw")]
+visible = false
 position = Vector2(774, 419)
 ending_position = Vector2(1017, 370)
 
 [node name="PuzzlePiece12" parent="Pieces" instance=ExtResource("15_1mf4w")]
+visible = false
 position = Vector2(1203, 513)
 ending_position = Vector2(1212, 370)
 
