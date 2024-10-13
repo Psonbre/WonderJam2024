@@ -2,6 +2,10 @@ extends Node
 
 @onready var label = $"../piecesCaught"
 
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("Jump"):
+		test()
+
 func _ready() -> void:
 	var nbPieces : int = SubsystemManager.get_collectible_manager().get_pieces_caught()
 	var pieces_array : Array[Node] = getPuzzlePieces()
@@ -17,3 +21,19 @@ func getPuzzlePieces() -> Array[Node]:
 		puzzle_pieces_array.append(child)
 	
 	return puzzle_pieces_array
+	
+func test() -> void:
+	for piece in get_tree().get_nodes_in_group("PuzzlePieces"):
+		if piece is PuzzlePiece:
+			var allSidesConnected = piece.has_all_sides_connected()
+			print(piece.name + ": " + str(allSidesConnected))
+
+func checkIfPuzzleComplete() -> void:
+	for piece in get_tree().get_nodes_in_group("PuzzlePieces"):
+		if piece is PuzzlePiece:
+			!piece.has_all_sides_connected()
+			return
+	puzzleCompleted()
+	
+func puzzleCompleted() -> void:
+	print("Puzzle completed")

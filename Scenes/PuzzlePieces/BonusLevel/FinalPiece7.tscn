@@ -387,7 +387,7 @@ sources/8 = SubResource("TileSetAtlasSource_hx2pl")
 script = ExtResource("1_q8bsr")
 left_connection_slot = 1
 right_connection_slot = -1
-top_connection_slot = 1
+top_connection_slot = -1
 bottom_connection_slot = -1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
