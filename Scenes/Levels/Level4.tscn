@@ -1,0 +1,47 @@
+[gd_scene load_steps=9 format=3 uid="uid://ccau0avgesp5t"]
+
+[ext_resource type="PackedScene" uid="uid://dyrv4i083tx3b" path="res://Scenes/player.tscn" id="1_r1vvb"]
+[ext_resource type="FontFile" uid="uid://b51e4e1htly8h" path="res://Assets/Fonts/PressStart2P-Regular.ttf" id="2_iaytb"]
+[ext_resource type="Script" path="res://Scripts/level_name.gd" id="3_gps7f"]
+[ext_resource type="PackedScene" uid="uid://ic8c2xg6eu1s" path="res://Scenes/PuzzlePieces/Pirates/puzzle_piece12.tscn" id="4_0jfs3"]
+[ext_resource type="PackedScene" uid="uid://bqlnawjb534yd" path="res://Scenes/PuzzlePieces/Pirates/puzzle_piece13.tscn" id="5_yijjn"]
+[ext_resource type="PackedScene" uid="uid://dqiqn2byfrunh" path="res://Scenes/PuzzlePieces/Pirates/puzzle_piece14.tscn" id="6_3d46o"]
+[ext_resource type="PackedScene" uid="uid://bq0lbsqg5c5bs" path="res://Scenes/PuzzlePieces/Pirates/puzzle_piece15.tscn" id="7_qhqjq"]
+[ext_resource type="PackedScene" uid="uid://c002vaw66hpb7" path="res://Scenes/PuzzlePieces/Pirates/puzzle_piece16.tscn" id="8_j835k"]
+
+[node name="Level" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+zoom = Vector2(0.85, 0.85)
+
+[node name="Player" parent="." instance=ExtResource("1_r1vvb")]
+z_index = 11
+position = Vector2(1056, 309)
+scale = Vector2(1, 1)
+
+[node name="LevelName" type="Label" parent="."]
+z_index = 115
+offset_left = 501.0
+offset_top = 31.0
+offset_right = 613.0
+offset_bottom = 54.0
+scale = Vector2(2.71, 2.71)
+theme_override_fonts/font = ExtResource("2_iaytb")
+text = "Level 4"
+script = ExtResource("3_gps7f")
+
+[node name="PuzzlePiece" parent="." instance=ExtResource("4_0jfs3")]
+position = Vector2(1087, 316)
+
+[node name="PuzzlePiece2" parent="." instance=ExtResource("5_yijjn")]
+position = Vector2(272, 297)
+
+[node name="PuzzlePiece3" parent="." instance=ExtResource("6_3d46o")]
+position = Vector2(490, 586)
+
+[node name="PuzzlePiece4" parent="." instance=ExtResource("7_qhqjq")]
+position = Vector2(685, 271)
+
+[node name="PuzzlePiece5" parent="." instance=ExtResource("8_j835k")]
+position = Vector2(878, 555)
