@@ -1,25 +1,37 @@
-[gd_scene load_steps=5 format=3 uid="uid://bd6ixl16aidsv"]
+[gd_scene load_steps=17 format=3 uid="uid://bd6ixl16aidsv"]
 
 [ext_resource type="Script" path="res://Scripts/finalPieces.gd" id="3_56dvj"]
 [ext_resource type="FontFile" uid="uid://b51e4e1htly8h" path="res://Assets/Fonts/PressStart2P-Regular.ttf" id="3_af5u1"]
-[ext_resource type="PackedScene" uid="uid://bhycqxrb32tct" path="res://Scenes/PuzzlePieces/FinalPuzzlePieceTemplate.tscn" id="3_k2u3e"]
+[ext_resource type="PackedScene" uid="uid://ds65x1m8r3247" path="res://Scenes/PuzzlePieces/BonusLevel/FinalPiece1.tscn" id="4_le5ph"]
 [ext_resource type="Script" path="res://Scripts/level_name.gd" id="4_xp18x"]
+[ext_resource type="Texture2D" uid="uid://bsakdah20h1jo" path="res://Assets/Sprites/bonus_level_image.jpeg" id="5_3i3wg"]
+[ext_resource type="PackedScene" uid="uid://dhgwavch8qsfc" path="res://Scenes/PuzzlePieces/BonusLevel/FinalPiece2.tscn" id="5_y6xpo"]
+[ext_resource type="PackedScene" uid="uid://dtx3vnl2fn5fh" path="res://Scenes/PuzzlePieces/BonusLevel/FinalPiece3.tscn" id="6_cfbi1"]
+[ext_resource type="PackedScene" uid="uid://sasmh7ypgwyb" path="res://Scenes/PuzzlePieces/BonusLevel/FinalPiece4.tscn" id="7_jnaop"]
+[ext_resource type="PackedScene" uid="uid://cgkaok45axdyd" path="res://Scenes/PuzzlePieces/BonusLevel/FinalPiece5.tscn" id="8_bx21f"]
+[ext_resource type="PackedScene" uid="uid://b05j2rf08gbfr" path="res://Scenes/PuzzlePieces/BonusLevel/FinalPiece6.tscn" id="9_1lvo3"]
+[ext_resource type="PackedScene" uid="uid://r3s4i3xbpaor" path="res://Scenes/PuzzlePieces/BonusLevel/FinalPiece7.tscn" id="10_tu46l"]
+[ext_resource type="PackedScene" uid="uid://b6sudyai3lx0h" path="res://Scenes/PuzzlePieces/BonusLevel/FinalPiece8.tscn" id="11_nn71p"]
+[ext_resource type="PackedScene" uid="uid://ca1p7b6rgsdtt" path="res://Scenes/PuzzlePieces/BonusLevel/FinalPiece9.tscn" id="12_w0u6n"]
+[ext_resource type="PackedScene" uid="uid://4aecth2ckj32" path="res://Scenes/PuzzlePieces/BonusLevel/FinalPiece10.tscn" id="13_s3qh0"]
+[ext_resource type="PackedScene" uid="uid://ble67i2rtofdj" path="res://Scenes/PuzzlePieces/BonusLevel/FinalPiece11.tscn" id="14_k2yuw"]
+[ext_resource type="PackedScene" uid="uid://cxcljpirwhlhr" path="res://Scenes/PuzzlePieces/BonusLevel/FinalPiece12.tscn" id="15_1mf4w"]
 
 [node name="Level" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
-zoom = Vector2(1.135, 1.135)
+zoom = Vector2(0.8, 0.8)
 
 [node name="LevelName" type="Label" parent="."]
 z_index = -30
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = 246.0
-offset_top = 7.0
-offset_right = 422.0
-offset_bottom = 30.0
+offset_left = 404.0
+offset_top = 28.0
+offset_right = 580.0
+offset_bottom = 51.0
 grow_horizontal = 0
 scale = Vector2(2.71, 2.71)
 theme_override_fonts/font = ExtResource("3_af5u1")
@@ -32,10 +44,10 @@ z_index = -30
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = 740.0
-offset_top = 545.0
-offset_right = 1012.0
-offset_bottom = 568.0
+offset_left = 1152.0
+offset_top = 774.0
+offset_right = 1424.0
+offset_bottom = 797.0
 grow_horizontal = 0
 theme_override_fonts/font = ExtResource("3_af5u1")
 text = "Press ESC to exit"
@@ -47,10 +59,10 @@ z_index = -30
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = 269.0
-offset_top = 72.0
-offset_right = 477.0
-offset_bottom = 95.0
+offset_left = 427.0
+offset_top = 93.0
+offset_right = 635.0
+offset_bottom = 116.0
 grow_horizontal = 0
 scale = Vector2(2, 2)
 theme_override_fonts/font = ExtResource("3_af5u1")
@@ -61,38 +73,46 @@ script = ExtResource("4_xp18x")
 [node name="Pieces" type="Node" parent="."]
 script = ExtResource("3_56dvj")
 
-[node name="PuzzlePiece" parent="Pieces" instance=ExtResource("3_k2u3e")]
-visible = false
-position = Vector2(746, 411)
+[node name="PuzzlePiece" parent="Pieces" instance=ExtResource("4_le5ph")]
+position = Vector2(205, 210)
 
-[node name="PuzzlePiece9" parent="Pieces" instance=ExtResource("3_k2u3e")]
-visible = false
-position = Vector2(874, 591)
+[node name="PuzzlePiece2" parent="Pieces" instance=ExtResource("5_y6xpo")]
+position = Vector2(141, 682)
 
-[node name="PuzzlePiece8" parent="Pieces" instance=ExtResource("3_k2u3e")]
-visible = false
-position = Vector2(1082, 451)
+[node name="PuzzlePiece3" parent="Pieces" instance=ExtResource("6_cfbi1")]
+position = Vector2(1289, 183)
 
-[node name="PuzzlePiece2" parent="Pieces" instance=ExtResource("3_k2u3e")]
-visible = false
-position = Vector2(565, 241)
+[node name="PuzzlePiece4" parent="Pieces" instance=ExtResource("7_jnaop")]
+position = Vector2(1303, 643)
 
-[node name="PuzzlePiece5" parent="Pieces" instance=ExtResource("3_k2u3e")]
-visible = false
-position = Vector2(565, 241)
+[node name="PuzzlePiece5" parent="Pieces" instance=ExtResource("8_bx21f")]
+position = Vector2(461, 686)
 
-[node name="PuzzlePiece7" parent="Pieces" instance=ExtResource("3_k2u3e")]
-visible = false
-position = Vector2(428, 488)
+[node name="PuzzlePiece6" parent="Pieces" instance=ExtResource("9_1lvo3")]
+position = Vector2(1207, 412)
 
-[node name="PuzzlePiece6" parent="Pieces" instance=ExtResource("3_k2u3e")]
-visible = false
-position = Vector2(171, 266)
+[node name="PuzzlePiece7" parent="Pieces" instance=ExtResource("10_tu46l")]
+position = Vector2(738, 558)
 
-[node name="PuzzlePiece3" parent="Pieces" instance=ExtResource("3_k2u3e")]
-visible = false
-position = Vector2(884, 126)
+[node name="PuzzlePiece8" parent="Pieces" instance=ExtResource("11_nn71p")]
+position = Vector2(201, 536)
 
-[node name="PuzzlePiece4" parent="Pieces" instance=ExtResource("3_k2u3e")]
+[node name="PuzzlePiece9" parent="Pieces" instance=ExtResource("12_w0u6n")]
+position = Vector2(324, 332)
+
+[node name="PuzzlePiece10" parent="Pieces" instance=ExtResource("13_s3qh0")]
+position = Vector2(1000, 696)
+
+[node name="PuzzlePiece11" parent="Pieces" instance=ExtResource("14_k2yuw")]
+position = Vector2(495, 411)
+
+[node name="PuzzlePiece12" parent="Pieces" instance=ExtResource("15_1mf4w")]
+position = Vector2(953, 375)
+
+[node name="TextureRect" type="TextureRect" parent="."]
 visible = false
-position = Vector2(884, 126)
+offset_left = 110.0
+offset_top = 63.0
+offset_right = 860.0
+offset_bottom = 543.0
+texture = ExtResource("5_3i3wg")
