@@ -4,6 +4,7 @@ class_name SubsystemManager
 static var instance: SubsystemManager = null
 static var level_manager: LevelManager = null
 static var music_manager: MusicManager = null
+static var sound_manager: SoundManager = null
 
 
 # Initialize the singleton instance
@@ -32,3 +33,11 @@ static func get_music_manager() -> MusicManager:
 		music_manager = music_manager_scene.instantiate()
 		get_SubsystemManager().root.add_child(music_manager)
 	return music_manager
+
+# Get the MusicManager instance
+static func get_sound_manager() -> SoundManager:
+	if sound_manager == null:
+		var sound_manager_scene = load("res://Scenes/Manager/SoundManager.tscn")
+		sound_manager = sound_manager_scene.instantiate()
+		get_SubsystemManager().root.add_child(sound_manager)
+	return sound_manager
