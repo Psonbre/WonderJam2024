@@ -36,7 +36,7 @@ func _physics_process(delta):
 
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
 		animated_sprite_2d.play("Jump");
-		SubsystemManager.get_sound_manager().play_sound("res://Assets/Sounds/jump.ogg", -2)
+		SubsystemManager.get_sound_manager().play_sound("res://Assets/Sounds/jump.ogg", -7)
 		velocity.y = JUMP_VELOCITY
 
 	move_and_slide()
@@ -61,9 +61,6 @@ func remove_overlapping_piece(piece : PuzzlePiece):
 	if piece in overlapping_pieces:
 		overlapping_pieces.remove_at(overlapping_pieces.find(piece))
 
-func clamp_position_to_piece(piece : PuzzlePiece):
-	return
-	
 func win(door):
 	if !winning :
 		winning_door = door

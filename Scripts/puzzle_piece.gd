@@ -16,6 +16,7 @@ extends Area2D
 @onready var content = $PuzzlePiece/Content
 
 var has_attempted_connection_this_tick := false
+var door
 
 var is_connected_left := false :
 	set(value):
@@ -38,7 +39,6 @@ var default_scale := Vector2(1.0, 1.0)
 
 var valid_drop := false
 var start_drag_position := Vector2.ZERO
-var door : Door
 
 func _ready():
 	default_scale = scale
@@ -77,13 +77,13 @@ func start_dragging():
 	start_drag_position = position
 	is_dragging = true
 	global_dragging = true
+	SubsystemManager.get_sound_manager().play_sound("res://Assets/Sounds/piece_pickup.wav", -5.0)
 	set_puzzle_piece_collisions_to_foreground(true)
 	for node in content.get_children(false):
 		set_collisions_to_foreground(node, true)
 	var player = find_child("Player") as Player
 	if player != null:
 		player.set_physics_process(false)
-		player.clamp_position_to_piece(self)
 	attempt_connection()
 	for piece in get_tree().get_nodes_in_group("PuzzlePieces"):
 		if piece != self : piece.attempt_connection()
@@ -97,9 +97,6 @@ func stop_dragging():
 	for node in content.get_children(true):
 		set_collisions_to_foreground(node, false)
 	var player = find_child("Player") as Player
-	if player != null:
-		player.set_physics_process(true)
-		player.clamp_position_to_piece(self)
 	await get_tree().physics_frame
 	await get_tree().physics_frame
 	for area in $PuzzlePieceOverlap.get_overlapping_areas():
@@ -107,12 +104,20 @@ func stop_dragging():
 			position = start_drag_position
 			await get_tree().physics_frame
 			attempt_connection()
+			if player != null:
+				await get_tree().physics_frame
+				await get_tree().physics_frame
+				player.set_physics_process(true)
 			return
 		
 	attempt_connection()
 	for piece in get_tree().get_nodes_in_group("PuzzlePieces"):
 		if piece != self : piece.attempt_connection()
-	
+		
+	if player != null:
+		await get_tree().physics_frame
+		await get_tree().physics_frame
+		player.set_physics_process(true)
 
 func attempt_connection():
 	if is_dragging : return
@@ -128,7 +133,7 @@ func attempt_connection():
 	other_piece = get_first_valid_overlap_in_bound(left_bound, "right")
 	if other_piece != null && !other_piece.is_dragging:
 		if scale != default_scale:
-			SubsystemManager.get_sound_manager().play_sound("res://Assets/Sounds/pieceClick.ogg")
+			SubsystemManager.get_sound_manager().play_sound("res://Assets/Sounds/piece_click.ogg", -10.0)
 		position = other_piece.position - Vector2(-200, 0)	
 		is_connected_left = true
 		other_piece.is_connected_right = true
@@ -141,7 +146,7 @@ func attempt_connection():
 	other_piece = get_first_valid_overlap_in_bound(right_bound, "left")
 	if other_piece != null && !other_piece.is_dragging:
 		if scale != default_scale:
-			SubsystemManager.get_sound_manager().play_sound("res://Assets/Sounds/pieceClick.ogg")
+			SubsystemManager.get_sound_manager().play_sound("res://Assets/Sounds/piece_click.ogg", -10.0)
 		position = other_piece.position - Vector2(200, 0)
 		is_connected_right = true
 		other_piece.is_connected_left = true
@@ -154,7 +159,7 @@ func attempt_connection():
 	other_piece = get_first_valid_overlap_in_bound(top_bound, "bottom")
 	if other_piece != null && !other_piece.is_dragging:
 		if scale != default_scale:
-			SubsystemManager.get_sound_manager().play_sound("res://Assets/Sounds/pieceClick.ogg")
+			SubsystemManager.get_sound_manager().play_sound("res://Assets/Sounds/piece_click.ogg", -10.0)
 		position = other_piece.position - Vector2(0, -200)
 		is_connected_top = true
 		other_piece.is_connected_bottom = true
@@ -167,7 +172,7 @@ func attempt_connection():
 	other_piece = get_first_valid_overlap_in_bound(bottom_bound, "top")
 	if other_piece != null && !other_piece.is_dragging:
 		if scale != default_scale:
-			SubsystemManager.get_sound_manager().play_sound("res://Assets/Sounds/pieceClick.ogg")
+			SubsystemManager.get_sound_manager().play_sound("res://Assets/Sounds/piece_click.ogg", -10.0)
 		position = other_piece.position - Vector2(0, 200)
 		is_connected_bottom = true
 		other_piece.is_connected_top = true
@@ -208,13 +213,18 @@ func set_puzzle_piece_collisions_to_foreground(foreground : bool):
 	set_collisions_to_foreground($PuzzlePiece/TopCollider, foreground)
 	set_collisions_to_foreground($PuzzlePiece/BottomCollider, foreground)
 	set_collisions_to_foreground($Collisions, foreground)
-	set_collisions_to_foreground(door, foreground)
 	
 	if foreground:
+		set_collisions_to_foreground(door, foreground)
 		is_connected_right = false
 		is_connected_bottom = false
 		is_connected_left = false
 		is_connected_top = false
+	else:
+		await get_tree().physics_frame
+		await get_tree().physics_frame
+		set_collisions_to_foreground(door, foreground)
+		
 
 func set_collisions_to_foreground(node : CollisionObject2D, foreground : bool):
 	if node == null : return
