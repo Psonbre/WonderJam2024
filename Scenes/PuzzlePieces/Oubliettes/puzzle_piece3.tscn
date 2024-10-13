@@ -14,7 +14,7 @@ region = Rect2(328, 196, 44, 60)
 
 [node name="PuzzlePiece" instance=ExtResource("1_3l8vj")]
 left_connection_slot = -1
-right_connection_slot = 1
+right_connection_slot = -2
 top_connection_slot = -2
 bottom_connection_slot = -2
 

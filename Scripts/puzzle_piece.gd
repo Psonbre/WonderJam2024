@@ -22,15 +22,22 @@ var collectible
 var is_connected_left := false :
 	set(value):
 		$PuzzlePiece/LeftCollider/CollisionShape2D.disabled = value
+		is_connected_left = value
+		
 var is_connected_right := false :
 	set(value):
 		$PuzzlePiece/RightCollider/CollisionShape2D.disabled = value
+		is_connected_right = value
+		
 var is_connected_top := false :
 	set(value):
 		$PuzzlePiece/TopCollider/CollisionShape2D.disabled = value
+		is_connected_top = value
+				
 var is_connected_bottom := false :
 	set(value):
 		$PuzzlePiece/BottomCollider/CollisionShape2D.disabled = value
+		is_connected_bottom = value
 
 var is_dragging := false
 static var global_dragging := false

@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://5l14n3s0fo0j" path="res://Scenes/player4.tscn" id="4_78t3y"]
 [ext_resource type="PackedScene" uid="uid://cya3fi1p627ql" path="res://Scenes/PuzzlePieces/Sci-Fi/puzzle_piece6.tscn" id="6_bo164"]
 [ext_resource type="PackedScene" uid="uid://cmstrfg0643es" path="res://Scenes/PuzzlePieces/Sci-Fi/puzzle_piece7.tscn" id="7_av2yq"]
-[ext_resource type="PackedScene" uid="uid://dfc80a8wqhc7n" path="res://Scenes/PuzzlePieces/Sci-Fi/puzzle_piece5.tscn" id="7_g71g1"]
+[ext_resource type="PackedScene" uid="uid://btlchgqcf038r" path="res://Scenes/PuzzlePieces/Sci-Fi/puzzle_piece8.tscn" id="7_f5vj5"]
 
 [node name="Level" type="Node2D"]
 
@@ -31,11 +31,11 @@ position = Vector2(213, 382)
 [node name="Player" parent="." instance=ExtResource("4_78t3y")]
 position = Vector2(202, 381)
 
-[node name="PuzzlePiece4" parent="." instance=ExtResource("7_g71g1")]
-position = Vector2(1076, 367)
-
 [node name="PuzzlePiece2" parent="." instance=ExtResource("6_bo164")]
 position = Vector2(658, 281)
 
 [node name="PuzzlePiece3" parent="." instance=ExtResource("7_av2yq")]
 position = Vector2(658, 475)
+
+[node name="PuzzlePiece4" parent="." instance=ExtResource("7_f5vj5")]
+position = Vector2(1088, 381)
