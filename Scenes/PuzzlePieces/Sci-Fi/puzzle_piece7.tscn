@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=4 uid="uid://cmstrfg0643es"]
+[gd_scene load_steps=5 format=4 uid="uid://cmstrfg0643es"]
 
 [ext_resource type="PackedScene" uid="uid://b0c43sr0v666w" path="res://Scenes/PuzzlePieces/PuzzlePieceTemplate.tscn" id="1_l2h14"]
 [ext_resource type="Texture2D" uid="uid://bocnsydk1cek4" path="res://Assets/pieces_sprites/piece (25).png" id="2_7fxkl"]
+[ext_resource type="PackedScene" uid="uid://33mcraqrs0sn" path="res://Scenes/PuzzlePieces/Collectible.tscn" id="3_utyw1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tqqon"]
 size = Vector2(100, 234)
@@ -30,3 +31,7 @@ tile_map_data = PackedByteArray("AAACAAQACAAAAAEAAAADAAQACAADAAEAAAACAAEACAAAAAE
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Collisions" index="0"]
 position = Vector2(28, 29)
 shape = SubResource("RectangleShape2D_tqqon")
+
+[node name="Collectible" parent="Collisions" index="1" instance=ExtResource("3_utyw1")]
+position = Vector2(104, -63)
+scale = Vector2(0.378698, 0.378698)

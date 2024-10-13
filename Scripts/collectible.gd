@@ -17,7 +17,7 @@ func _process(delta):
 	pass
 
 func _on_body_entered(body):
-	if body is Player and body.is_physics_processing():
+	if body is Player and body.is_physics_processing() && !Player.has_collectible:
 		Player.has_collectible = true
 		SubsystemManager.get_sound_manager().play_sound("res://Assets/Sounds/winJingle.ogg", -5)
 		SubsystemManager.get_collectible_manager().add_piece()
