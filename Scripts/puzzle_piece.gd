@@ -141,7 +141,6 @@ func stop_dragging():
 		player.set_physics_process(true)
 
 func attempt_connection():
-	if get_tree().root.get_node("Game").old_screen != null : return
 	if is_dragging : return
 	if has_attempted_connection_this_tick: return
 	has_attempted_connection_this_tick = true
@@ -153,6 +152,7 @@ func attempt_connection():
 	
 	# Check left bound
 	other_piece = get_first_valid_overlap_in_bound(left_bound, "right")
+	if get_parent() != other_piece.get_parent() : return
 	if other_piece != null && !other_piece.is_dragging:
 		if scale != default_scale:
 			SubsystemManager.get_sound_manager().play_sound("res://Assets/Sounds/piece_click.ogg", -10.0)
@@ -166,6 +166,7 @@ func attempt_connection():
 	
 	# Check right bound
 	other_piece = get_first_valid_overlap_in_bound(right_bound, "left")
+	if get_parent() != other_piece.get_parent() : return
 	if other_piece != null && !other_piece.is_dragging:
 		if scale != default_scale:
 			SubsystemManager.get_sound_manager().play_sound("res://Assets/Sounds/piece_click.ogg", -10.0)
@@ -179,6 +180,7 @@ func attempt_connection():
 	
 	# Check top bound
 	other_piece = get_first_valid_overlap_in_bound(top_bound, "bottom")
+	if get_parent() != other_piece.get_parent() : return
 	if other_piece != null && !other_piece.is_dragging:
 		if scale != default_scale:
 			SubsystemManager.get_sound_manager().play_sound("res://Assets/Sounds/piece_click.ogg", -10.0)
@@ -192,6 +194,7 @@ func attempt_connection():
 	
 	# Check bottom bound
 	other_piece = get_first_valid_overlap_in_bound(bottom_bound, "top")
+	if get_parent() != other_piece.get_parent() : return
 	if other_piece != null && !other_piece.is_dragging:
 		if scale != default_scale:
 			SubsystemManager.get_sound_manager().play_sound("res://Assets/Sounds/piece_click.ogg", -10.0)
