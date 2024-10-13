@@ -141,6 +141,7 @@ func stop_dragging():
 		player.set_physics_process(true)
 
 func attempt_connection():
+	if get_tree().root.get_node("Game").old_screen != null : return
 	if is_dragging : return
 	if has_attempted_connection_this_tick: return
 	has_attempted_connection_this_tick = true

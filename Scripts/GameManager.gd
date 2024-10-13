@@ -25,6 +25,7 @@ func load_level(level_name):
 	get_tree().root.get_node("Game").add_child(level)
 
 func load_main_menu():
+	if current_screen == get_node("MainMenu") : return
 	if old_screen != null : return
 	if Player.current_level == 13 : Player.current_level = 1
 	old_screen = current_screen
