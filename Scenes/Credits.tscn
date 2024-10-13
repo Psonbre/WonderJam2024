@@ -1,9 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://b5ui348xrja2j"]
+[gd_scene load_steps=5 format=3 uid="uid://b5ui348xrja2j"]
 
 [ext_resource type="Script" path="res://Scripts/Buttons/BackScript.gd" id="1_fll2r"]
-[ext_resource type="Texture2D" uid="uid://cnnpa2k8e5bxs" path="res://Assets/homeSelected.png" id="2_naxpv"]
 [ext_resource type="FontFile" uid="uid://b51e4e1htly8h" path="res://Assets/Fonts/PressStart2P-Regular.ttf" id="2_yqpi3"]
-[ext_resource type="Texture2D" uid="uid://c6ls1i4nwgqfj" path="res://Assets/homeNormal.png" id="3_rrc82"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_56lap"]
 font = ExtResource("2_yqpi3")
@@ -35,17 +33,15 @@ text = "Credits"
 label_settings = SubResource("LabelSettings_56lap")
 horizontal_alignment = 1
 
-[node name="Button" type="TextureButton" parent="Credits"]
+[node name="Button" type="Button" parent="Credits"]
 layout_mode = 0
 offset_left = 7.0
 offset_top = 12.0
-offset_right = 97.0
-offset_bottom = 102.0
+offset_right = 124.0
+offset_bottom = 70.0
 scale = Vector2(0.8, 0.8)
-texture_normal = ExtResource("3_rrc82")
-texture_pressed = ExtResource("2_naxpv")
-texture_hover = ExtResource("2_naxpv")
-stretch_mode = 0
+theme_override_font_sizes/font_size = 36
+text = "Back"
 script = ExtResource("1_fll2r")
 
 [node name="Gamejam" type="VBoxContainer" parent="Credits"]

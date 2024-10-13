@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://btexkm12jn7f3"]
+[gd_scene load_steps=21 format=4 uid="uid://btexkm12jn7f3"]
 
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_37ua5"]
 [ext_resource type="Script" path="res://Scripts/Buttons/PlayButton.gd" id="1_t1cdp"]
@@ -9,7 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://cph5l5ltrh8xo" path="res://icon.svg" id="4_8b41y"]
 [ext_resource type="FontFile" uid="uid://b51e4e1htly8h" path="res://Assets/Fonts/PressStart2P-Regular.ttf" id="5_jyjwq"]
 [ext_resource type="Script" path="res://Scripts/level_name.gd" id="7_1fm4w"]
+[ext_resource type="Shader" path="res://Scenes/PuzzlePieces/PuzzleOutline.gdshader" id="8_xdrwo"]
+[ext_resource type="Texture2D" uid="uid://c0ienm8yq51eu" path="res://Assets/piece (1)-1.png (1).png" id="9_kxnfd"]
 [ext_resource type="Texture2D" uid="uid://ct5cs5f5n1clb" path="res://Assets/Wooden Pixel Art GUI 32x32.png" id="10_4suia"]
+[ext_resource type="Texture2D" uid="uid://dgj4alkt3dygf" path="res://Assets/piece (1)-1.png-1.png.png" id="10_w8o0h"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d3ioe"]
 shader = ExtResource("3_n6hm2")
@@ -2925,11 +2928,31 @@ sources/0 = SubResource("TileSetAtlasSource_ebmju")
 [sub_resource type="LabelSettings" id="LabelSettings_b18gn"]
 font = ExtResource("5_jyjwq")
 font_size = 64
-font_color = Color(0.718761, 0.541617, 0.127224, 1)
 outline_size = 10
 
-[sub_resource type="Theme" id="Theme_w3m55"]
-Button/fonts/font = ExtResource("5_jyjwq")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t0ail"]
+shader = ExtResource("8_xdrwo")
+shader_parameter/max_line_width = 10.0
+shader_parameter/min_line_width = 5.0
+shader_parameter/freq = 2.5
+shader_parameter/block_size = 15.0
+shader_parameter/outline_colour = Vector4(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fiia2"]
+shader = ExtResource("8_xdrwo")
+shader_parameter/max_line_width = 10.0
+shader_parameter/min_line_width = 5.0
+shader_parameter/freq = 2.5
+shader_parameter/block_size = 15.0
+shader_parameter/outline_colour = Vector4(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_84kbr"]
+shader = ExtResource("8_xdrwo")
+shader_parameter/max_line_width = 10.0
+shader_parameter/min_line_width = 5.0
+shader_parameter/freq = 2.5
+shader_parameter/block_size = 15.0
+shader_parameter/outline_colour = Vector4(0, 0, 0, 1)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_37ua5")
@@ -2962,46 +2985,104 @@ visible = false
 tile_map_data = PackedByteArray("AAADAAYAAAAOABUAAAAEAAYAAAAPABUAAAAFAAYAAAAPABUAAAAGAAYAAAAPABUAAAAHAAYAAAAPABUAAAAIAAYAAAAPABUAAAAJAAYAAAAPABUAAAAKAAYAAAAPABUAAAALAAYAAAAPABUAAAAMAAYAAAAPABUAAAANAAYAAAAPABUAAAAOAAYAAAAPABUAAAAPAAYAAAAPABUAAAAQAAYAAAAPABUAAAARAAYAAAAPABUAAAASAAYAAAAPABUAAAATAAYAAAAPABUAAAAUAAYAAAAPABUAAAAVAAYAAAAPABUAAAAWAAYAAAAPABUAAAAXAAYAAAAPABUAAAAYAAYAAAAPABUAAAAZAAYAAAAPABUAAAAaAAYAAAAPABUAAAAbAAYAAAAPABUAAAAcAAYAAAAPABUAAAAdAAYAAAAPABUAAAAeAAYAAAAPABUAAAAfAAYAAAAPABUAAAAgAAYAAAAQABUAAAAgAAcAAAAQABUAAAAgAAgAAAAQABUAAAAgAAkAAAAQABUAAAAgAAoAAAAQABUAAAAgAAsAAAAQABUAAAAgAAwAAAAQABUAAAAgAA0AAAAQABUAAAAgAA4AAAAQABUAAAAgAA8AAAAQABUAAAARABEAAAAPABYAAAAQABEAAAAPABYAAAAPABEAAAAPABYAAAAOABEAAAAPABYAAAANABEAAAAPABYAAAAMABEAAAAPABYAAAALABEAAAAPABYAAAAKABEAAAAPABYAAAAJABEAAAAPABYAAAAIABEAAAAPABYAAAAHABEAAAAPABYAAAAGABEAAAAPABYAAAAFABEAAAAPABYAAAAEABEAAAAPABYAAAASABEAAAAPABYAAAATABEAAAAPABYAAAAUABEAAAAPABYAAAAVABEAAAAPABYAAAAWABEAAAAPABYAAAAXABEAAAAPABYAAAAYABEAAAAPABYAAAAZABEAAAAPABYAAAAaABEAAAAPABYAAAAbABEAAAAPABYAAAAcABEAAAAPABYAAAAdABEAAAAPABYAAAAeABEAAAAPABYAAAAfABEAAAAPABYAAAAgABEAAAAQABYAAAAgABAAAAAQABUAAAADABEAAAAOABYAAAADABAAAAAOABUAAAADAA8AAAAOABUAAAADAA4AAAAOABUAAAADAA0AAAAOABUAAAADAAwAAAAOABUAAAADAAsAAAAOABUAAAADAAoAAAAOABUAAAADAAkAAAAOABUAAAADAAgAAAAOABUAAAADAAcAAAAOABUAAAAEAAcAAAAPABUAAAAEAAgAAAAPABUAAAAEAAkAAAAPABUAAAAEAAoAAAAPABUAAAAEAAsAAAAPABUAAAAEAAwAAAAPABUAAAAEAA0AAAAPABUAAAAEAA4AAAAPABUAAAAEAA8AAAAPABUAAAAEABAAAAAPABUAAAAFAAcAAAAPABUAAAAFAAgAAAAPABUAAAAFAAkAAAAPABUAAAAFAAoAAAAPABUAAAAFAAsAAAAPABUAAAAFAAwAAAAPABUAAAAFAA0AAAAPABUAAAAFAA4AAAAPABUAAAAFAA8AAAAPABUAAAAFABAAAAAPABUAAAAGAAcAAAAPABUAAAAGAAgAAAAPABUAAAAGAAkAAAAPABUAAAAGAAoAAAAPABUAAAAGAAsAAAAPABUAAAAGAAwAAAAPABUAAAAGAA0AAAAPABUAAAAGAA4AAAAPABUAAAAGAA8AAAAPABUAAAAGABAAAAAPABUAAAAHAAcAAAAPABUAAAAHAAgAAAAPABUAAAAHAAkAAAAPABUAAAAHAAoAAAAPABUAAAAHAAsAAAAPABUAAAAHAAwAAAAPABUAAAAHAA0AAAAPABUAAAAHAA4AAAAPABUAAAAHAA8AAAAPABUAAAAHABAAAAAPABUAAAAIAAcAAAAPABUAAAAIAAgAAAAPABUAAAAIAAkAAAAPABUAAAAIAAoAAAAPABUAAAAIAAsAAAAPABUAAAAIAAwAAAAPABUAAAAIAA0AAAAPABUAAAAIAA4AAAAPABUAAAAIAA8AAAAPABUAAAAIABAAAAAPABUAAAAJAAcAAAAPABUAAAAJAAgAAAAPABUAAAAJAAkAAAAPABUAAAAJAAoAAAAPABUAAAAJAAsAAAAPABUAAAAJAAwAAAAPABUAAAAJAA0AAAAPABUAAAAJAA4AAAAPABUAAAAJAA8AAAAPABUAAAAJABAAAAAPABUAAAAKAAcAAAAPABUAAAAKAAgAAAAPABUAAAAKAAkAAAAPABUAAAAKAAoAAAAPABUAAAAKAAsAAAAPABUAAAAKAAwAAAAPABUAAAAKAA0AAAAPABUAAAAKAA4AAAAPABUAAAAKAA8AAAAPABUAAAAKABAAAAAPABUAAAALAAcAAAAPABUAAAALAAgAAAAPABUAAAALAAkAAAAPABUAAAALAAoAAAAPABUAAAALAAsAAAAPABUAAAALAAwAAAAPABUAAAALAA0AAAAPABUAAAALAA4AAAAPABUAAAALAA8AAAAPABUAAAALABAAAAAPABUAAAAMAAcAAAAPABUAAAAMAAgAAAAPABUAAAAMAAkAAAAPABUAAAAMAAoAAAAPABUAAAAMAAsAAAAPABUAAAAMAAwAAAAPABUAAAAMAA0AAAAPABUAAAAMAA4AAAAPABUAAAAMAA8AAAAPABUAAAAMABAAAAAPABUAAAANAAcAAAAPABUAAAANAAgAAAAPABUAAAANAAkAAAAPABUAAAANAAoAAAAPABUAAAANAAsAAAAPABUAAAANAAwAAAAPABUAAAANAA0AAAAPABUAAAANAA4AAAAPABUAAAANAA8AAAAPABUAAAANABAAAAAPABUAAAAOAAcAAAAPABUAAAAOAAgAAAAPABUAAAAOAAkAAAAPABUAAAAOAAoAAAAPABUAAAAOAAsAAAAPABUAAAAOAAwAAAAPABUAAAAOAA0AAAAPABUAAAAOAA4AAAAPABUAAAAOAA8AAAAPABUAAAAOABAAAAAPABUAAAAPAAcAAAAPABUAAAAPAAgAAAAPABUAAAAPAAkAAAAPABUAAAAPAAoAAAAPABUAAAAPAAsAAAAPABUAAAAPAAwAAAAPABUAAAAPAA0AAAAPABUAAAAPAA4AAAAPABUAAAAPAA8AAAAPABUAAAAPABAAAAAPABUAAAAQAAcAAAAPABUAAAAQAAgAAAAPABUAAAAQAAkAAAAPABUAAAAQAAoAAAAPABUAAAAQAAsAAAAPABUAAAAQAAwAAAAPABUAAAAQAA0AAAAPABUAAAAQAA4AAAAPABUAAAAQAA8AAAAPABUAAAAQABAAAAAPABUAAAARAAcAAAAPABUAAAARAAgAAAAPABUAAAARAAkAAAAPABUAAAARAAoAAAAPABUAAAARAAsAAAAPABUAAAARAAwAAAAPABUAAAARAA0AAAAPABUAAAARAA4AAAAPABUAAAARAA8AAAAPABUAAAARABAAAAAPABUAAAASAAcAAAAPABUAAAASAAgAAAAPABUAAAASAAkAAAAPABUAAAASAAoAAAAPABUAAAASAAsAAAAPABUAAAASAAwAAAAPABUAAAASAA0AAAAPABUAAAASAA4AAAAPABUAAAASAA8AAAAPABUAAAASABAAAAAPABUAAAATAAcAAAAPABUAAAATAAgAAAAPABUAAAATAAkAAAAPABUAAAATAAoAAAAPABUAAAATAAsAAAAPABUAAAATAAwAAAAPABUAAAATAA0AAAAPABUAAAATAA4AAAAPABUAAAATAA8AAAAPABUAAAATABAAAAAPABUAAAAUAAcAAAAPABUAAAAUAAgAAAAPABUAAAAUAAkAAAAPABUAAAAUAAoAAAAPABUAAAAUAAsAAAAPABUAAAAUAAwAAAAPABUAAAAUAA0AAAAPABUAAAAUAA4AAAAPABUAAAAUAA8AAAAPABUAAAAUABAAAAAPABUAAAAVAAcAAAAPABUAAAAVAAgAAAAPABUAAAAVAAkAAAAPABUAAAAVAAoAAAAPABUAAAAVAAsAAAAPABUAAAAVAAwAAAAPABUAAAAVAA0AAAAPABUAAAAVAA4AAAAPABUAAAAVAA8AAAAPABUAAAAVABAAAAAPABUAAAAWAAcAAAAPABUAAAAWAAgAAAAPABUAAAAWAAkAAAAPABUAAAAWAAoAAAAPABUAAAAWAAsAAAAPABUAAAAWAAwAAAAPABUAAAAWAA0AAAAPABUAAAAWAA4AAAAPABUAAAAWAA8AAAAPABUAAAAWABAAAAAPABUAAAAXAAcAAAAPABUAAAAXAAgAAAAPABUAAAAXAAkAAAAPABUAAAAXAAoAAAAPABUAAAAXAAsAAAAPABUAAAAXAAwAAAAPABUAAAAXAA0AAAAPABUAAAAXAA4AAAAPABUAAAAXAA8AAAAPABUAAAAXABAAAAAPABUAAAAYAAcAAAAPABUAAAAYAAgAAAAPABUAAAAYAAkAAAAPABUAAAAYAAoAAAAPABUAAAAYAAsAAAAPABUAAAAYAAwAAAAPABUAAAAYAA0AAAAPABUAAAAYAA4AAAAPABUAAAAYAA8AAAAPABUAAAAYABAAAAAPABUAAAAZAAcAAAAPABUAAAAZAAgAAAAPABUAAAAZAAkAAAAPABUAAAAZAAoAAAAPABUAAAAZAAsAAAAPABUAAAAZAAwAAAAPABUAAAAZAA0AAAAPABUAAAAZAA4AAAAPABUAAAAZAA8AAAAPABUAAAAZABAAAAAPABUAAAAaAAcAAAAPABUAAAAaAAgAAAAPABUAAAAaAAkAAAAPABUAAAAaAAoAAAAPABUAAAAaAAsAAAAPABUAAAAaAAwAAAAPABUAAAAaAA0AAAAPABUAAAAaAA4AAAAPABUAAAAaAA8AAAAPABUAAAAaABAAAAAPABUAAAAbAAcAAAAPABUAAAAbAAgAAAAPABUAAAAbAAkAAAAPABUAAAAbAAoAAAAPABUAAAAbAAsAAAAPABUAAAAbAAwAAAAPABUAAAAbAA0AAAAPABUAAAAbAA4AAAAPABUAAAAbAA8AAAAPABUAAAAbABAAAAAPABUAAAAcAAcAAAAPABUAAAAcAAgAAAAPABUAAAAcAAkAAAAPABUAAAAcAAoAAAAPABUAAAAcAAsAAAAPABUAAAAcAAwAAAAPABUAAAAcAA0AAAAPABUAAAAcAA4AAAAPABUAAAAcAA8AAAAPABUAAAAcABAAAAAPABUAAAAdAAcAAAAPABUAAAAdAAgAAAAPABUAAAAdAAkAAAAPABUAAAAdAAoAAAAPABUAAAAdAAsAAAAPABUAAAAdAAwAAAAPABUAAAAdAA0AAAAPABUAAAAdAA4AAAAPABUAAAAdAA8AAAAPABUAAAAdABAAAAAPABUAAAAeAAcAAAAPABUAAAAeAAgAAAAPABUAAAAeAAkAAAAPABUAAAAeAAoAAAAPABUAAAAeAAsAAAAPABUAAAAeAAwAAAAPABUAAAAeAA0AAAAPABUAAAAeAA4AAAAPABUAAAAeAA8AAAAPABUAAAAeABAAAAAPABUAAAAfAAcAAAAPABUAAAAfAAgAAAAPABUAAAAfAAkAAAAPABUAAAAfAAoAAAAPABUAAAAfAAsAAAAPABUAAAAfAAwAAAAPABUAAAAfAA0AAAAPABUAAAAfAA4AAAAPABUAAAAfAA8AAAAPABUAAAAfABAAAAAPABUAAAADAAQAAAAOABQAAAAEAAQAAAAPABQAAAAFAAQAAAAPABQAAAAGAAQAAAAPABQAAAAHAAQAAAAPABQAAAAIAAQAAAAPABQAAAAJAAQAAAAPABQAAAAKAAQAAAAPABQAAAALAAQAAAAPABQAAAAMAAQAAAAPABQAAAANAAQAAAAPABQAAAAOAAQAAAAPABQAAAAPAAQAAAAPABQAAAAQAAQAAAAPABQAAAARAAQAAAAPABQAAAASAAQAAAAPABQAAAATAAQAAAAPABQAAAAUAAQAAAAPABQAAAAVAAQAAAAPABQAAAAWAAQAAAAPABQAAAAXAAQAAAAPABQAAAAYAAQAAAAPABQAAAAZAAQAAAAPABQAAAAaAAQAAAAPABQAAAAbAAQAAAAPABQAAAAcAAQAAAAPABQAAAAdAAQAAAAPABQAAAAeAAQAAAAPABQAAAAfAAQAAAAPABQAAAAgAAQAAAAQABQAAAAgAAUAAAAQABUAAAADAAUAAAAOABUAAAAEAAUAAAAPABUAAAAFAAUAAAAPABUAAAAGAAUAAAAPABUAAAAHAAUAAAAPABUAAAAIAAUAAAAPABUAAAAJAAUAAAAPABUAAAAKAAUAAAAPABUAAAALAAUAAAAPABUAAAAMAAUAAAAPABUAAAANAAUAAAAPABUAAAAOAAUAAAAPABUAAAAPAAUAAAAPABUAAAAQAAUAAAAPABUAAAARAAUAAAAPABUAAAASAAUAAAAPABUAAAATAAUAAAAPABUAAAAUAAUAAAAPABUAAAAVAAUAAAAPABUAAAAWAAUAAAAPABUAAAAXAAUAAAAPABUAAAAYAAUAAAAPABUAAAAZAAUAAAAPABUAAAAaAAUAAAAPABUAAAAbAAUAAAAPABUAAAAcAAUAAAAPABUAAAAdAAUAAAAPABUAAAAeAAUAAAAPABUAAAAfAAUAAAAPABUAAAA=")
 tile_set = SubResource("TileSet_ed5ad")
 
-[node name="TitleLabel" type="Label" parent="MainMenu/MainMenu"]
+[node name="Piece" type="Label" parent="MainMenu/MainMenu"]
 layout_mode = 2
-offset_left = 130.0
-offset_top = 221.0
-offset_right = 1026.0
-offset_bottom = 309.0
-text = "Piece by Piece"
+offset_left = -132.0
+offset_top = 193.0
+offset_right = 764.0
+offset_bottom = 281.0
+scale = Vector2(0.835, 0.835)
+text = "Piece"
 label_settings = SubResource("LabelSettings_b18gn")
 horizontal_alignment = 1
 vertical_alignment = 1
+uppercase = true
 script = ExtResource("7_1fm4w")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/MainMenu"]
-z_index = 5
-layout_direction = 2
-layout_mode = 1
+[node name="piece" type="Sprite2D" parent="MainMenu/MainMenu/Piece"]
+modulate = Color(1.49205e-06, 0.473994, 0.53103, 1)
+z_index = -2
+material = SubResource("ShaderMaterial_t0ail")
+position = Vector2(450.299, 34.7305)
+scale = Vector2(0.605, 0.605)
+texture = ExtResource("10_w8o0h")
+
+[node name="By" type="Label" parent="MainMenu/MainMenu"]
+layout_mode = 2
+offset_left = 203.0
+offset_top = 192.0
+offset_right = 1099.0
+offset_bottom = 280.0
+scale = Vector2(0.835, 0.835)
+text = "by"
+label_settings = SubResource("LabelSettings_b18gn")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+script = ExtResource("7_1fm4w")
+
+[node name="piece" type="Sprite2D" parent="MainMenu/MainMenu/By"]
+modulate = Color(1.49205e-06, 0.473994, 0.53103, 1)
+z_index = -2
+material = SubResource("ShaderMaterial_fiia2")
+position = Vector2(444, 41)
+scale = Vector2(0.605, 0.605)
+texture = ExtResource("9_kxnfd")
+
+[node name="Piece1" type="Label" parent="MainMenu/MainMenu"]
+layout_mode = 2
+offset_left = 533.0
+offset_top = 193.0
+offset_right = 1429.0
+offset_bottom = 281.0
+scale = Vector2(0.835, 0.835)
+text = "Piece"
+label_settings = SubResource("LabelSettings_b18gn")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+script = ExtResource("7_1fm4w")
+
+[node name="piece" type="Sprite2D" parent="MainMenu/MainMenu/Piece1"]
+modulate = Color(1.49205e-06, 0.473994, 0.53103, 1)
+z_index = -2
+material = SubResource("ShaderMaterial_84kbr")
+position = Vector2(442, 39)
+scale = Vector2(0.605, 0.605)
+texture = ExtResource("10_w8o0h")
+
+[node name="CenterContainer" type="CenterContainer" parent="MainMenu/MainMenu"]
+layout_mode = 2
 offset_left = 215.0
 offset_top = 357.0
 offset_right = 937.0
-offset_bottom = 505.0
-pivot_offset = Vector2(90, 0)
-theme_override_constants/separation = 15
+offset_bottom = 402.0
+script = ExtResource("7_1fm4w")
+vertical_speed = 1.0
+vertical_intensity = 5
+horizontal_intensity = 2
 
-[node name="CenterContainer" type="CenterContainer" parent="MainMenu/MainMenu/VBoxContainer"]
-layout_mode = 2
-
-[node name="Start" type="Button" parent="MainMenu/MainMenu/VBoxContainer/CenterContainer"]
+[node name="Start" type="Button" parent="MainMenu/MainMenu/CenterContainer"]
 custom_minimum_size = Vector2(210, 45)
 layout_mode = 2
 focus_mode = 0
-theme = SubResource("Theme_w3m55")
 theme_override_fonts/font = ExtResource("5_jyjwq")
 theme_override_font_sizes/font_size = 24
 text = "Start"
 script = ExtResource("1_t1cdp")
 
-[node name="CenterContainer2" type="CenterContainer" parent="MainMenu/MainMenu/VBoxContainer"]
+[node name="CenterContainer2" type="CenterContainer" parent="MainMenu/MainMenu"]
 layout_mode = 2
+offset_left = 215.0
+offset_top = 429.0
+offset_right = 937.0
+offset_bottom = 474.0
+script = ExtResource("7_1fm4w")
+vertical_speed = 1.0
+vertical_intensity = 5
+horizontal_intensity = 2
 
-[node name="Credits" type="Button" parent="MainMenu/MainMenu/VBoxContainer/CenterContainer2"]
+[node name="Credits" type="Button" parent="MainMenu/MainMenu/CenterContainer2"]
 custom_minimum_size = Vector2(210, 45)
 layout_mode = 2
 focus_mode = 0
@@ -3010,10 +3091,18 @@ theme_override_font_sizes/font_size = 24
 text = "Credits"
 script = ExtResource("2_x311k")
 
-[node name="CenterContainer3" type="CenterContainer" parent="MainMenu/MainMenu/VBoxContainer"]
+[node name="CenterContainer3" type="CenterContainer" parent="MainMenu/MainMenu"]
 layout_mode = 2
+offset_left = 215.0
+offset_top = 512.0
+offset_right = 937.0
+offset_bottom = 557.0
+script = ExtResource("7_1fm4w")
+vertical_speed = 1.0
+vertical_intensity = 5
+horizontal_intensity = 2
 
-[node name="Exit" type="Button" parent="MainMenu/MainMenu/VBoxContainer/CenterContainer3"]
+[node name="Exit" type="Button" parent="MainMenu/MainMenu/CenterContainer3"]
 custom_minimum_size = Vector2(210, 45)
 layout_mode = 2
 focus_mode = 0
@@ -3022,7 +3111,12 @@ theme_override_font_sizes/font_size = 24
 text = "Exit"
 script = ExtResource("2_dbrev")
 
-[connection signal="mouse_entered" from="MainMenu/MainMenu/VBoxContainer/CenterContainer/Start" to="MainMenu/MainMenu/VBoxContainer/CenterContainer/Start" method="_on_mouse_entered"]
-[connection signal="pressed" from="MainMenu/MainMenu/VBoxContainer/CenterContainer/Start" to="MainMenu/MainMenu/VBoxContainer/CenterContainer/Start" method="_on_pressed"]
-[connection signal="pressed" from="MainMenu/MainMenu/VBoxContainer/CenterContainer2/Credits" to="MainMenu/MainMenu/VBoxContainer/CenterContainer2/Credits" method="_on_pressed"]
-[connection signal="pressed" from="MainMenu/MainMenu/VBoxContainer/CenterContainer3/Exit" to="MainMenu/MainMenu/VBoxContainer/CenterContainer3/Exit" method="_on_pressed"]
+[connection signal="mouse_entered" from="MainMenu/MainMenu/CenterContainer/Start" to="MainMenu/MainMenu/CenterContainer/Start" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="MainMenu/MainMenu/CenterContainer/Start" to="MainMenu/MainMenu/CenterContainer/Start" method="_on_mouse_exited"]
+[connection signal="pressed" from="MainMenu/MainMenu/CenterContainer/Start" to="MainMenu/MainMenu/CenterContainer/Start" method="_on_pressed"]
+[connection signal="mouse_entered" from="MainMenu/MainMenu/CenterContainer2/Credits" to="MainMenu/MainMenu/CenterContainer2/Credits" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="MainMenu/MainMenu/CenterContainer2/Credits" to="MainMenu/MainMenu/CenterContainer2/Credits" method="_on_mouse_exited"]
+[connection signal="pressed" from="MainMenu/MainMenu/CenterContainer2/Credits" to="MainMenu/MainMenu/CenterContainer2/Credits" method="_on_pressed"]
+[connection signal="mouse_entered" from="MainMenu/MainMenu/CenterContainer3/Exit" to="MainMenu/MainMenu/CenterContainer3/Exit" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="MainMenu/MainMenu/CenterContainer3/Exit" to="MainMenu/MainMenu/CenterContainer3/Exit" method="_on_mouse_exited"]
+[connection signal="pressed" from="MainMenu/MainMenu/CenterContainer3/Exit" to="MainMenu/MainMenu/CenterContainer3/Exit" method="_on_pressed"]
