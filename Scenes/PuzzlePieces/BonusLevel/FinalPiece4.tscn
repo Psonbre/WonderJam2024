@@ -1,6 +1,6 @@
 [gd_scene load_steps=29 format=4 uid="uid://sasmh7ypgwyb"]
 
-[ext_resource type="Script" path="res://Scripts/puzzle_piece.gd" id="1_iex73"]
+[ext_resource type="Script" path="res://Scripts/bonus_puzzle_piece.gd" id="1_q1o4l"]
 [ext_resource type="Texture2D" uid="uid://cp1jwkshqvg4t" path="res://Assets/pieces_sprites/piece.png" id="2_qwyku"]
 [ext_resource type="Shader" path="res://Scenes/PuzzlePieces/PuzzleOutline.gdshader" id="3_n6wdf"]
 [ext_resource type="Texture2D" uid="uid://cm6ib67ilnpto" path="res://Assets/pieces_sprites/piece (18).png" id="4_ni34k"]
@@ -384,7 +384,7 @@ sources/7 = SubResource("TileSetAtlasSource_jh6rs")
 sources/8 = SubResource("TileSetAtlasSource_hx2pl")
 
 [node name="PuzzlePiece" type="Area2D" groups=["PuzzlePieces"]]
-script = ExtResource("1_iex73")
+script = ExtResource("1_q1o4l")
 left_connection_slot = 1
 right_connection_slot = -2
 top_connection_slot = -1
@@ -493,6 +493,7 @@ rotation = -1.5708
 texture = ExtResource("4_ni34k")
 
 [node name="SpriteMovingOutline" type="Sprite2D" parent="Sprite"]
+visible = false
 clip_children = 2
 z_index = -5
 material = SubResource("ShaderMaterial_hs13t")
