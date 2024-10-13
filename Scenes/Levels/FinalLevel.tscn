@@ -21,17 +21,17 @@
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
-zoom = Vector2(0.8, 0.8)
+zoom = Vector2(0.6, 0.6)
 
 [node name="LevelName" type="Label" parent="."]
 z_index = -30
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = 404.0
-offset_top = 28.0
-offset_right = 580.0
-offset_bottom = 51.0
+offset_left = 692.0
+offset_top = 24.0
+offset_right = 868.0
+offset_bottom = 47.0
 grow_horizontal = 0
 scale = Vector2(2.71, 2.71)
 theme_override_fonts/font = ExtResource("3_af5u1")
@@ -44,10 +44,10 @@ z_index = -30
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = 1152.0
-offset_top = 774.0
-offset_right = 1424.0
-offset_bottom = 797.0
+offset_left = 1634.0
+offset_top = 1042.0
+offset_right = 1906.0
+offset_bottom = 1065.0
 grow_horizontal = 0
 theme_override_fonts/font = ExtResource("3_af5u1")
 text = "Press ESC to exit"
@@ -59,10 +59,10 @@ z_index = -30
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = 427.0
-offset_top = 93.0
-offset_right = 635.0
-offset_bottom = 116.0
+offset_left = 715.0
+offset_top = 89.0
+offset_right = 923.0
+offset_bottom = 112.0
 grow_horizontal = 0
 scale = Vector2(2, 2)
 theme_override_fonts/font = ExtResource("3_af5u1")
