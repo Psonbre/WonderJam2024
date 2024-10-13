@@ -1,13 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://cdp0b24qjn6et"]
+[gd_scene load_steps=9 format=3 uid="uid://co427wjwfxwd6"]
 
-[ext_resource type="PackedScene" uid="uid://dyrv4i083tx3b" path="res://Scenes/player.tscn" id="1_r1vvb"]
-[ext_resource type="FontFile" uid="uid://b51e4e1htly8h" path="res://Assets/Fonts/PressStart2P-Regular.ttf" id="2_iaytb"]
-[ext_resource type="Script" path="res://Scripts/level_name.gd" id="3_gps7f"]
-[ext_resource type="PackedScene" uid="uid://ct8os4sccqjv1" path="res://Scenes/PuzzlePieces/Pirates/puzzle_piece4.tscn" id="4_5j77x"]
-[ext_resource type="PackedScene" uid="uid://dgmq0ys716wuy" path="res://Scenes/PuzzlePieces/Pirates/puzzle_piece5.tscn" id="5_5q5x1"]
-[ext_resource type="PackedScene" uid="uid://b7rkjn3ah83ga" path="res://Scenes/PuzzlePieces/Pirates/puzzle_piece6.tscn" id="6_yil30"]
-[ext_resource type="PackedScene" uid="uid://b11tlwfinxagj" path="res://Scenes/PuzzlePieces/Pirates/puzzle_piece7.tscn" id="7_ydqtq"]
-[ext_resource type="PackedScene" uid="uid://b73kpksh07u71" path="res://Scenes/PuzzlePieces/Pirates/puzzle_piece8.tscn" id="8_drxej"]
+[ext_resource type="PackedScene" uid="uid://fjqeivlxjcr1" path="res://Scenes/player3.tscn" id="1_ihxvi"]
+[ext_resource type="FontFile" uid="uid://b51e4e1htly8h" path="res://Assets/Fonts/PressStart2P-Regular.ttf" id="2_e36te"]
+[ext_resource type="Script" path="res://Scripts/level_name.gd" id="3_2uhmy"]
+[ext_resource type="PackedScene" uid="uid://c7v5c0tw1qr64" path="res://Scenes/PuzzlePieces/Oubliettes/puzzle_piece44.tscn" id="4_ojbxw"]
+[ext_resource type="PackedScene" uid="uid://beir3yqwaro6u" path="res://Scenes/PuzzlePieces/Oubliettes/puzzle_piece45.tscn" id="5_6w84v"]
+[ext_resource type="PackedScene" uid="uid://bcn86dwwe348s" path="res://Scenes/PuzzlePieces/Oubliettes/puzzle_piece46.tscn" id="6_jsg5k"]
+[ext_resource type="PackedScene" uid="uid://bajyjd7f2b74e" path="res://Scenes/PuzzlePieces/Oubliettes/puzzle_piece47.tscn" id="7_d7yi8"]
+[ext_resource type="PackedScene" uid="uid://r3c8aepnlngp" path="res://Scenes/PuzzlePieces/Oubliettes/puzzle_piece48.tscn" id="8_fg2mo"]
 
 [node name="Level" type="Node2D"]
 
@@ -15,10 +15,8 @@
 anchor_mode = 0
 zoom = Vector2(0.85, 0.85)
 
-[node name="Player" parent="." instance=ExtResource("1_r1vvb")]
-z_index = 11
-position = Vector2(682, 306)
-scale = Vector2(1, 1)
+[node name="Player2" parent="." instance=ExtResource("1_ihxvi")]
+position = Vector2(663, 268)
 
 [node name="LevelName" type="Label" parent="."]
 z_index = 115
@@ -27,21 +25,21 @@ offset_top = 42.0
 offset_right = 647.0
 offset_bottom = 65.0
 scale = Vector2(2.71, 2.71)
-theme_override_fonts/font = ExtResource("2_iaytb")
+theme_override_fonts/font = ExtResource("2_e36te")
 text = "Level 4"
-script = ExtResource("3_gps7f")
+script = ExtResource("3_2uhmy")
 
-[node name="PuzzlePiece" parent="." instance=ExtResource("4_5j77x")]
-position = Vector2(705, 272)
+[node name="PuzzlePiece" parent="." instance=ExtResource("4_ojbxw")]
+position = Vector2(662, 256)
 
-[node name="PuzzlePiece2" parent="." instance=ExtResource("5_5q5x1")]
-position = Vector2(250, 556)
+[node name="PuzzlePiece2" parent="." instance=ExtResource("5_6w84v")]
+position = Vector2(258, 543)
 
-[node name="PuzzlePiece3" parent="." instance=ExtResource("6_yil30")]
-position = Vector2(239, 233)
+[node name="PuzzlePiece3" parent="." instance=ExtResource("6_jsg5k")]
+position = Vector2(250, 223)
 
-[node name="PuzzlePiece4" parent="." instance=ExtResource("7_ydqtq")]
-position = Vector2(600, 566)
+[node name="PuzzlePiece4" parent="." instance=ExtResource("7_d7yi8")]
+position = Vector2(666, 570)
 
-[node name="PuzzlePiece5" parent="." instance=ExtResource("8_drxej")]
-position = Vector2(1031, 271)
+[node name="PuzzlePiece5" parent="." instance=ExtResource("8_fg2mo")]
+position = Vector2(1108, 367)
