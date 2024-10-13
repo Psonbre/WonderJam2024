@@ -12,6 +12,7 @@ func _ready():
 	add_child(credits_screen)
 
 func load_level(level_name):
+	if old_screen != null : return
 	var level : Node2D = load("res://Scenes/Levels/" + level_name + ".tscn").instantiate()
 	var new_cam : Camera2D = level.get_node("Camera2D")
 	%Camera2D.target_position = new_cam.global_position
@@ -24,12 +25,14 @@ func load_level(level_name):
 	get_tree().root.get_node("Game").add_child(level)
 
 func load_main_menu():
+	if old_screen != null : return
 	old_screen = current_screen
 	current_screen = get_node("MainMenu")
 	%Camera2D.target_position = Vector2.ZERO
 	%Camera2D.target_zoom = Vector2.ONE
 	
 func load_credits():
+	if old_screen != null : return
 	old_screen = current_screen
 	current_screen = credits_screen
 	%Camera2D.target_position = Vector2.ZERO
@@ -38,6 +41,11 @@ func load_credits():
 func _process(delta):
 	if Input.is_action_just_pressed("Pause") :
 		load_main_menu()
+	if Input.is_action_just_pressed("Reset") && !Player.winning && old_screen == null :
+		if Player.has_collectible :
+			SubsystemManager.get_collectible_manager().remove_piece()
+		load_level("Level" + str(Player.current_level))
+		Player.has_collectible = false
 	
 	if (current_screen) : current_screen.global_position.x = move_toward(current_screen.global_position.x, 0, 2500 * delta)
 	if (old_screen) : 

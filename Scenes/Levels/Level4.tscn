@@ -38,7 +38,7 @@ position = Vector2(1087, 316)
 position = Vector2(272, 297)
 
 [node name="PuzzlePiece3" parent="." instance=ExtResource("6_3d46o")]
-position = Vector2(490, 586)
+position = Vector2(485, 565)
 
 [node name="PuzzlePiece4" parent="." instance=ExtResource("7_qhqjq")]
 position = Vector2(685, 271)

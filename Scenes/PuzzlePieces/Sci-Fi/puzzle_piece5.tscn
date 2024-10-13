@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=4 uid="uid://dfc80a8wqhc7n"]
+[gd_scene load_steps=6 format=4 uid="uid://dfc80a8wqhc7n"]
 
 [ext_resource type="PackedScene" uid="uid://b0c43sr0v666w" path="res://Scenes/PuzzlePieces/PuzzlePieceTemplate.tscn" id="1_82l17"]
 [ext_resource type="Texture2D" uid="uid://coaacgm63c6fu" path="res://Assets/pieces_sprites/piece (8).png" id="2_gbes0"]
 [ext_resource type="PackedScene" uid="uid://dhlcjmkh6dl43" path="res://Scenes/door.tscn" id="3_ngqs3"]
+[ext_resource type="PackedScene" uid="uid://33mcraqrs0sn" path="res://Scenes/PuzzlePieces/Collectible.tscn" id="4_rk0ou"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i8pmb"]
 size = Vector2(201, 52)
@@ -40,3 +41,7 @@ shape = SubResource("RectangleShape2D_i8pmb")
 z_index = 10
 position = Vector2(28, 41)
 scale = Vector2(0.445, 0.445)
+
+[node name="Collectible" parent="Collisions" index="3" instance=ExtResource("4_rk0ou")]
+position = Vector2(94, 41)
+scale = Vector2(0.400003, 0.400003)

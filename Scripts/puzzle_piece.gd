@@ -17,6 +17,7 @@ extends Area2D
 
 var has_attempted_connection_this_tick := false
 var door
+var collectible
 
 var is_connected_left := false :
 	set(value):
@@ -43,6 +44,7 @@ var start_drag_position := Vector2.ZERO
 func _ready():
 	default_scale = scale
 	door = find_child("Door")
+	collectible = find_child("Collectible")
 	await get_tree().physics_frame
 	await get_tree().physics_frame
 	attempt_connection()
@@ -216,6 +218,7 @@ func set_puzzle_piece_collisions_to_foreground(foreground : bool):
 	
 	if foreground:
 		set_collisions_to_foreground(door, foreground)
+		set_collisions_to_foreground(collectible, foreground)
 		is_connected_right = false
 		is_connected_bottom = false
 		is_connected_left = false
@@ -224,6 +227,7 @@ func set_puzzle_piece_collisions_to_foreground(foreground : bool):
 		await get_tree().physics_frame
 		await get_tree().physics_frame
 		set_collisions_to_foreground(door, foreground)
+		set_collisions_to_foreground(collectible, foreground)
 		
 
 func set_collisions_to_foreground(node : CollisionObject2D, foreground : bool):
