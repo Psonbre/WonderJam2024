@@ -26,16 +26,16 @@ text = "Level 7"
 script = ExtResource("2_lva3h")
 
 [node name="Player" parent="." instance=ExtResource("3_eapl2")]
-position = Vector2(739, 224)
+position = Vector2(104, 405)
 
 [node name="PuzzlePiece2" parent="." instance=ExtResource("5_y5ynp")]
-position = Vector2(278, 408)
+position = Vector2(839, 404)
 
 [node name="PuzzlePiece3" parent="." instance=ExtResource("6_a7ehb")]
-position = Vector2(812, 285)
+position = Vector2(183, 412)
 
 [node name="PuzzlePiece4" parent="." instance=ExtResource("7_u2tlf")]
-position = Vector2(1075, 484)
+position = Vector2(1170, 392)
 
 [node name="PuzzlePiece" parent="." instance=ExtResource("7_oij84")]
-position = Vector2(590, 536)
+position = Vector2(526, 402)
