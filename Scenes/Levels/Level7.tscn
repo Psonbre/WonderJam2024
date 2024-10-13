@@ -2,11 +2,11 @@
 
 [ext_resource type="FontFile" uid="uid://b51e4e1htly8h" path="res://Assets/Fonts/PressStart2P-Regular.ttf" id="1_dxn1p"]
 [ext_resource type="Script" path="res://Scripts/level_name.gd" id="2_lva3h"]
-[ext_resource type="PackedScene" uid="uid://cxvwjjbxjksy1" path="res://Scenes/player2.tscn" id="3_eapl2"]
-[ext_resource type="PackedScene" uid="uid://dc86xynya84fv" path="res://Scenes/PuzzlePieces/Medievales/puzzle_piece2.tscn" id="5_y5ynp"]
-[ext_resource type="PackedScene" uid="uid://dplf0c2sxmmyt" path="res://Scenes/PuzzlePieces/Medievales/puzzle_piece3.tscn" id="6_a7ehb"]
-[ext_resource type="PackedScene" uid="uid://oa0tngihasnh" path="res://Scenes/PuzzlePieces/Medievales/puzzle_piece5.tscn" id="7_oij84"]
-[ext_resource type="PackedScene" uid="uid://blori0ptuih23" path="res://Scenes/PuzzlePieces/Medievales/puzzle_piece4.tscn" id="7_u2tlf"]
+[ext_resource type="PackedScene" uid="uid://b8uudp0y53o6e" path="res://Scenes/PuzzlePieces/Sci-Fi/puzzle_piece2.tscn" id="3_qnulb"]
+[ext_resource type="PackedScene" uid="uid://5l14n3s0fo0j" path="res://Scenes/player4.tscn" id="4_saeym"]
+[ext_resource type="PackedScene" uid="uid://0o0061rgcbn7" path="res://Scenes/PuzzlePieces/Sci-Fi/puzzle_piece3.tscn" id="5_wugpa"]
+[ext_resource type="PackedScene" uid="uid://uhlyaqx8tlpj" path="res://Scenes/PuzzlePieces/Sci-Fi/puzzle_piece4.tscn" id="6_75w13"]
+[ext_resource type="PackedScene" uid="uid://dfc80a8wqhc7n" path="res://Scenes/PuzzlePieces/Sci-Fi/puzzle_piece5.tscn" id="7_pun4m"]
 
 [node name="Level" type="Node2D"]
 
@@ -25,17 +25,17 @@ theme_override_fonts/font = ExtResource("1_dxn1p")
 text = "Level 7"
 script = ExtResource("2_lva3h")
 
-[node name="Player" parent="." instance=ExtResource("3_eapl2")]
-position = Vector2(104, 405)
+[node name="PuzzlePiece" parent="." instance=ExtResource("3_qnulb")]
+position = Vector2(712, 629)
 
-[node name="PuzzlePiece2" parent="." instance=ExtResource("5_y5ynp")]
-position = Vector2(839, 404)
+[node name="Player" parent="." instance=ExtResource("4_saeym")]
+position = Vector2(706, 630)
 
-[node name="PuzzlePiece3" parent="." instance=ExtResource("6_a7ehb")]
-position = Vector2(180, 395)
+[node name="PuzzlePiece2" parent="." instance=ExtResource("5_wugpa")]
+position = Vector2(297, 525)
 
-[node name="PuzzlePiece4" parent="." instance=ExtResource("7_u2tlf")]
-position = Vector2(1170, 392)
+[node name="PuzzlePiece3" parent="." instance=ExtResource("6_75w13")]
+position = Vector2(541, 292)
 
-[node name="PuzzlePiece" parent="." instance=ExtResource("7_oij84")]
-position = Vector2(526, 402)
+[node name="PuzzlePiece4" parent="." instance=ExtResource("7_pun4m")]
+position = Vector2(937, 315)

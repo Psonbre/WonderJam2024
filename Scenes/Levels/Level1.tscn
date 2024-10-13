@@ -7,7 +7,7 @@
 [ext_resource type="FontFile" uid="uid://b51e4e1htly8h" path="res://Assets/Fonts/PressStart2P-Regular.ttf" id="7_8iyfl"]
 [ext_resource type="Script" path="res://Scripts/level_name.gd" id="8_8nxnl"]
 
-[node name="Level" type="Node2D"]
+[node name="Level2" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
