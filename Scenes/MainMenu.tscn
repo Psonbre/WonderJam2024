@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://btexkm12jn7f3"]
+[gd_scene load_steps=22 format=4 uid="uid://btexkm12jn7f3"]
 
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_37ua5"]
 [ext_resource type="Script" path="res://Scripts/Buttons/PlayButton.gd" id="1_t1cdp"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://Scripts/camera.gd" id="3_wtgqd"]
 [ext_resource type="Texture2D" uid="uid://cph5l5ltrh8xo" path="res://icon.svg" id="4_8b41y"]
 [ext_resource type="FontFile" uid="uid://b51e4e1htly8h" path="res://Assets/Fonts/PressStart2P-Regular.ttf" id="5_jyjwq"]
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="5_yowjd"]
 [ext_resource type="Script" path="res://Scripts/level_name.gd" id="7_1fm4w"]
 [ext_resource type="Shader" path="res://Scenes/PuzzlePieces/PuzzleOutline.gdshader" id="8_xdrwo"]
 [ext_resource type="Texture2D" uid="uid://c0ienm8yq51eu" path="res://Assets/piece (1)-1.png (1).png" id="9_kxnfd"]
@@ -2978,6 +2979,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("5_yowjd")
 metadata/_edit_horizontal_guides_ = [695.0]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="MainMenu/MainMenu"]

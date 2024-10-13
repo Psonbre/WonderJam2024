@@ -11,7 +11,6 @@ static var collectible_manager: CollectibleManager = null
 # Initialize the singleton instance
 func _initialize() -> void:
 	instance = Engine.get_main_loop() as SubsystemManager
-	get_music_manager()
 
 # Get the SubsystemManager singleton instance
 static func get_SubsystemManager() -> SubsystemManager:
