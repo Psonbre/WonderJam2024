@@ -1,25 +1,73 @@
-[gd_scene load_steps=5 format=3 uid="uid://bd6ixl16aidsv"]
+[gd_scene load_steps=20 format=3 uid="uid://bd6ixl16aidsv"]
 
+[ext_resource type="Texture2D" uid="uid://bw557bvmkghgc" path="res://Assets/Thumbs-Up-Emoji-PNG-Image.png" id="3_54j5l"]
 [ext_resource type="Script" path="res://Scripts/finalPieces.gd" id="3_56dvj"]
 [ext_resource type="FontFile" uid="uid://b51e4e1htly8h" path="res://Assets/Fonts/PressStart2P-Regular.ttf" id="3_af5u1"]
-[ext_resource type="PackedScene" uid="uid://bhycqxrb32tct" path="res://Scenes/PuzzlePieces/FinalPuzzlePieceTemplate.tscn" id="3_k2u3e"]
+[ext_resource type="PackedScene" uid="uid://ds65x1m8r3247" path="res://Scenes/PuzzlePieces/BonusLevel/FinalPiece1.tscn" id="4_le5ph"]
 [ext_resource type="Script" path="res://Scripts/level_name.gd" id="4_xp18x"]
+[ext_resource type="PackedScene" uid="uid://dhgwavch8qsfc" path="res://Scenes/PuzzlePieces/BonusLevel/FinalPiece2.tscn" id="5_y6xpo"]
+[ext_resource type="PackedScene" uid="uid://dtx3vnl2fn5fh" path="res://Scenes/PuzzlePieces/BonusLevel/FinalPiece3.tscn" id="6_cfbi1"]
+[ext_resource type="PackedScene" uid="uid://sasmh7ypgwyb" path="res://Scenes/PuzzlePieces/BonusLevel/FinalPiece4.tscn" id="7_jnaop"]
+[ext_resource type="PackedScene" uid="uid://cgkaok45axdyd" path="res://Scenes/PuzzlePieces/BonusLevel/FinalPiece5.tscn" id="8_bx21f"]
+[ext_resource type="PackedScene" uid="uid://b05j2rf08gbfr" path="res://Scenes/PuzzlePieces/BonusLevel/FinalPiece6.tscn" id="9_1lvo3"]
+[ext_resource type="PackedScene" uid="uid://r3s4i3xbpaor" path="res://Scenes/PuzzlePieces/BonusLevel/FinalPiece7.tscn" id="10_tu46l"]
+[ext_resource type="PackedScene" uid="uid://b6sudyai3lx0h" path="res://Scenes/PuzzlePieces/BonusLevel/FinalPiece8.tscn" id="11_nn71p"]
+[ext_resource type="PackedScene" uid="uid://ca1p7b6rgsdtt" path="res://Scenes/PuzzlePieces/BonusLevel/FinalPiece9.tscn" id="12_w0u6n"]
+[ext_resource type="PackedScene" uid="uid://4aecth2ckj32" path="res://Scenes/PuzzlePieces/BonusLevel/FinalPiece10.tscn" id="13_s3qh0"]
+[ext_resource type="PackedScene" uid="uid://ble67i2rtofdj" path="res://Scenes/PuzzlePieces/BonusLevel/FinalPiece11.tscn" id="14_k2yuw"]
+[ext_resource type="PackedScene" uid="uid://cxcljpirwhlhr" path="res://Scenes/PuzzlePieces/BonusLevel/FinalPiece12.tscn" id="15_1mf4w"]
+
+[sub_resource type="Animation" id="Animation_f2kyg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_2rl8b"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pt6af"]
+_data = {
+"RESET": SubResource("Animation_f2kyg"),
+"fade_in": SubResource("Animation_2rl8b")
+}
 
 [node name="Level" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
-zoom = Vector2(1.135, 1.135)
+zoom = Vector2(0.6, 0.6)
 
 [node name="LevelName" type="Label" parent="."]
 z_index = -30
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = 246.0
-offset_top = 7.0
-offset_right = 422.0
-offset_bottom = 30.0
+offset_left = 692.0
+offset_top = 24.0
+offset_right = 868.0
+offset_bottom = 47.0
 grow_horizontal = 0
 scale = Vector2(2.71, 2.71)
 theme_override_fonts/font = ExtResource("3_af5u1")
@@ -32,10 +80,10 @@ z_index = -30
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = 740.0
-offset_top = 545.0
-offset_right = 1012.0
-offset_bottom = 568.0
+offset_left = 1634.0
+offset_top = 1042.0
+offset_right = 1906.0
+offset_bottom = 1065.0
 grow_horizontal = 0
 theme_override_fonts/font = ExtResource("3_af5u1")
 text = "Press ESC to exit"
@@ -47,10 +95,10 @@ z_index = -30
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = 269.0
-offset_top = 72.0
-offset_right = 477.0
-offset_bottom = 95.0
+offset_left = 715.0
+offset_top = 89.0
+offset_right = 923.0
+offset_bottom = 112.0
 grow_horizontal = 0
 scale = Vector2(2, 2)
 theme_override_fonts/font = ExtResource("3_af5u1")
@@ -58,41 +106,91 @@ text = "Pieces : 0/12"
 horizontal_alignment = 1
 script = ExtResource("4_xp18x")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+z_index = 30
+offset_left = 516.0
+offset_top = 267.0
+offset_right = 2116.0
+offset_bottom = 1467.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_54j5l")
+expand_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TextureRect"]
+libraries = {
+"": SubResource("AnimationLibrary_pt6af")
+}
+
 [node name="Pieces" type="Node" parent="."]
 script = ExtResource("3_56dvj")
 
-[node name="PuzzlePiece" parent="Pieces" instance=ExtResource("3_k2u3e")]
+[node name="PuzzlePiece" parent="Pieces" instance=ExtResource("4_le5ph")]
 visible = false
-position = Vector2(746, 411)
+position = Vector2(233, 854)
+ending_position = Vector2(622, 763)
 
-[node name="PuzzlePiece9" parent="Pieces" instance=ExtResource("3_k2u3e")]
+[node name="PuzzlePiece2" parent="Pieces" instance=ExtResource("5_y6xpo")]
 visible = false
-position = Vector2(874, 591)
+position = Vector2(1706, 221)
+ending_position = Vector2(817, 763)
 
-[node name="PuzzlePiece8" parent="Pieces" instance=ExtResource("3_k2u3e")]
+[node name="PuzzlePiece3" parent="Pieces" instance=ExtResource("6_cfbi1")]
 visible = false
-position = Vector2(1082, 451)
+position = Vector2(1734, 829)
+ending_position = Vector2(1017, 763)
 
-[node name="PuzzlePiece2" parent="Pieces" instance=ExtResource("3_k2u3e")]
+[node name="PuzzlePiece4" parent="Pieces" instance=ExtResource("7_jnaop")]
 visible = false
-position = Vector2(565, 241)
+position = Vector2(1118, 919)
+ending_position = Vector2(1212, 763)
 
-[node name="PuzzlePiece5" parent="Pieces" instance=ExtResource("3_k2u3e")]
+[node name="PuzzlePiece5" parent="Pieces" instance=ExtResource("8_bx21f")]
 visible = false
-position = Vector2(565, 241)
+position = Vector2(434, 561)
+ending_position = Vector2(622, 567)
 
-[node name="PuzzlePiece7" parent="Pieces" instance=ExtResource("3_k2u3e")]
+[node name="PuzzlePiece6" parent="Pieces" instance=ExtResource("9_1lvo3")]
 visible = false
-position = Vector2(428, 488)
+position = Vector2(622, 895)
+ending_position = Vector2(817, 567)
 
-[node name="PuzzlePiece6" parent="Pieces" instance=ExtResource("3_k2u3e")]
+[node name="PuzzlePiece7" parent="Pieces" instance=ExtResource("10_tu46l")]
 visible = false
-position = Vector2(171, 266)
+position = Vector2(1440, 819)
+ending_position = Vector2(1017, 567)
 
-[node name="PuzzlePiece3" parent="Pieces" instance=ExtResource("3_k2u3e")]
+[node name="PuzzlePiece8" parent="Pieces" instance=ExtResource("11_nn71p")]
 visible = false
-position = Vector2(884, 126)
+position = Vector2(1541, 508)
+ending_position = Vector2(1212, 567)
 
-[node name="PuzzlePiece4" parent="Pieces" instance=ExtResource("3_k2u3e")]
+[node name="PuzzlePiece9" parent="Pieces" instance=ExtResource("12_w0u6n")]
 visible = false
-position = Vector2(884, 126)
+position = Vector2(862, 681)
+ending_position = Vector2(622, 370)
+
+[node name="PuzzlePiece10" parent="Pieces" instance=ExtResource("13_s3qh0")]
+visible = false
+position = Vector2(168, 262)
+ending_position = Vector2(817, 370)
+
+[node name="PuzzlePiece11" parent="Pieces" instance=ExtResource("14_k2yuw")]
+visible = false
+position = Vector2(774, 419)
+ending_position = Vector2(1017, 370)
+
+[node name="PuzzlePiece12" parent="Pieces" instance=ExtResource("15_1mf4w")]
+visible = false
+position = Vector2(1203, 513)
+ending_position = Vector2(1212, 370)
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="FinalImageTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="Pieces" method="_on_timer_timeout"]
+[connection signal="timeout" from="FinalImageTimer" to="Pieces" method="_on_final_image_timer_timeout"]
