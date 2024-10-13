@@ -1,11 +1,12 @@
 extends Node
 
-
+@onready var label = $"../piecesCaught"
 
 func _ready() -> void:
 	var nbPieces : int = SubsystemManager.get_collectible_manager().get_pieces_caught()
 	var pieces_array : Array[Node] = getPuzzlePieces()
 	nbPieces = clamp(nbPieces, 0, pieces_array.size())
+	label.text = str(nbPieces) +"/12 pieces"
 	for i in range(nbPieces):
 		pieces_array[i].visible = true
 

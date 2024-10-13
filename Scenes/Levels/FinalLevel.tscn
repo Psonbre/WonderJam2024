@@ -27,6 +27,37 @@ text = "Bonus level"
 horizontal_alignment = 1
 script = ExtResource("4_xp18x")
 
+[node name="LevelName2" type="Label" parent="."]
+z_index = -30
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 740.0
+offset_top = 545.0
+offset_right = 1012.0
+offset_bottom = 568.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("3_af5u1")
+text = "Press ESC to exit"
+horizontal_alignment = 1
+script = ExtResource("4_xp18x")
+
+[node name="piecesCaught" type="Label" parent="."]
+z_index = -30
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 269.0
+offset_top = 72.0
+offset_right = 477.0
+offset_bottom = 95.0
+grow_horizontal = 0
+scale = Vector2(2, 2)
+theme_override_fonts/font = ExtResource("3_af5u1")
+text = "Pieces : 0/12"
+horizontal_alignment = 1
+script = ExtResource("4_xp18x")
+
 [node name="Pieces" type="Node" parent="."]
 script = ExtResource("3_56dvj")
 
