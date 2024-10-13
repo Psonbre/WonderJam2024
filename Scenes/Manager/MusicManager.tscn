@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://b5qxc36ec5j2k"]
+[gd_scene load_steps=3 format=3 uid="uid://b5qxc36ec5j2k"]
 
 [ext_resource type="Script" path="res://Scripts/Manager/MusicManager.gd" id="1_dxv8p"]
+[ext_resource type="AudioStream" uid="uid://dr828h2056eno" path="res://Assets/Music/Music.mp3" id="1_m3xhd"]
 
 [node name="MusicManager" type="AudioStreamPlayer"]
+stream = ExtResource("1_m3xhd")
+autoplay = true
+parameters/looping = true
 script = ExtResource("1_dxv8p")

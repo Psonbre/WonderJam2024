@@ -101,6 +101,7 @@ theme_override_font_sizes/font_size = 30
 text = "Exit"
 script = ExtResource("2_dbrev")
 
+[connection signal="mouse_entered" from="MainMenu/MainMenu/VBoxContainer/CenterContainer/Start" to="MainMenu/MainMenu/VBoxContainer/CenterContainer/Start" method="_on_mouse_entered"]
 [connection signal="pressed" from="MainMenu/MainMenu/VBoxContainer/CenterContainer/Start" to="MainMenu/MainMenu/VBoxContainer/CenterContainer/Start" method="_on_pressed"]
 [connection signal="pressed" from="MainMenu/MainMenu/VBoxContainer/CenterContainer2/Credits" to="MainMenu/MainMenu/VBoxContainer/CenterContainer2/Credits" method="_on_pressed"]
 [connection signal="pressed" from="MainMenu/MainMenu/VBoxContainer/CenterContainer3/Exit" to="MainMenu/MainMenu/VBoxContainer/CenterContainer3/Exit" method="_on_pressed"]

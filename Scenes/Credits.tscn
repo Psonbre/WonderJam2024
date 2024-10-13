@@ -82,7 +82,7 @@ theme_override_constants/separation = 20
 
 [node name="SubTitle" type="Label" parent="Credits/HBoxContainer/Music"]
 layout_mode = 2
-text = "Musique
+text = "Sounds
 "
 label_settings = SubResource("LabelSettings_dvsln")
 horizontal_alignment = 1
@@ -92,8 +92,20 @@ layout_mode = 2
 
 [node name="Adam" type="Label" parent="Credits/HBoxContainer/Music/Names"]
 layout_mode = 2
-text = "Nom des assets
+text = "Cozy - One Man Symphony
 "
+label_settings = SubResource("LabelSettings_grfsm")
+horizontal_alignment = 1
+
+[node name="Adam2" type="Label" parent="Credits/HBoxContainer/Music/Names"]
+layout_mode = 2
+text = "Interface Sounds - Kenney"
+label_settings = SubResource("LabelSettings_grfsm")
+horizontal_alignment = 1
+
+[node name="Adam3" type="Label" parent="Credits/HBoxContainer/Music/Names"]
+layout_mode = 2
+text = "Impact Sounds - Kenney"
 label_settings = SubResource("LabelSettings_grfsm")
 horizontal_alignment = 1
 
