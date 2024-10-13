@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://blgwnfdju01yf"]
+[gd_scene load_steps=5 format=3 uid="uid://cbkjcw5mh7ef8"]
 
-[ext_resource type="PackedScene" uid="uid://6fjomqgplir1" path="res://Scenes/player3.tscn" id="1_816pm"]
+[ext_resource type="PackedScene" uid="uid://fjqeivlxjcr1" path="res://Scenes/player3.tscn" id="1_816pm"]
 [ext_resource type="PackedScene" uid="uid://booy3r3x6lp27" path="res://Scenes/PuzzlePieces/Oubliettes/puzzle_piece1.tscn" id="2_eeai6"]
 [ext_resource type="FontFile" uid="uid://b51e4e1htly8h" path="res://Assets/Fonts/PressStart2P-Regular.ttf" id="3_clqyv"]
 [ext_resource type="Script" path="res://Scripts/level_name.gd" id="4_qhc8m"]

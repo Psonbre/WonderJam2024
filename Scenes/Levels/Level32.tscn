@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bjwl3vjnfceb4"]
+[gd_scene load_steps=5 format=3 uid="uid://dpq73ind6hho2"]
 
-[ext_resource type="PackedScene" uid="uid://dwbc31cp8aws5" path="res://Scenes/player4.tscn" id="1_01tdq"]
+[ext_resource type="PackedScene" uid="uid://5l14n3s0fo0j" path="res://Scenes/player4.tscn" id="1_01tdq"]
 [ext_resource type="PackedScene" uid="uid://b6ifm33dwjmlj" path="res://Scenes/PuzzlePieces/Sci-Fi/puzzle_piece1.tscn" id="2_5lul6"]
 [ext_resource type="FontFile" uid="uid://b51e4e1htly8h" path="res://Assets/Fonts/PressStart2P-Regular.ttf" id="3_yxugw"]
 [ext_resource type="Script" path="res://Scripts/level_name.gd" id="4_e6slo"]
