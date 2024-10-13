@@ -38,9 +38,11 @@ var default_scale := Vector2(1.0, 1.0)
 
 var valid_drop := false
 var start_drag_position := Vector2.ZERO
+var door : Door
 
 func _ready():
 	default_scale = scale
+	door = find_child("Door")
 	await get_tree().physics_frame
 	await get_tree().physics_frame
 	attempt_connection()
@@ -69,6 +71,7 @@ func _process(delta):
 	has_attempted_connection_this_tick = false
 
 func start_dragging():
+	if Player.winning : return
 	sprite_moving_outline.visible = true
 	z_index = 10
 	start_drag_position = position
@@ -197,6 +200,7 @@ func set_puzzle_piece_collisions_to_foreground(foreground : bool):
 	set_collisions_to_foreground($PuzzlePiece/TopCollider, foreground)
 	set_collisions_to_foreground($PuzzlePiece/BottomCollider, foreground)
 	set_collisions_to_foreground($Collisions, foreground)
+	set_collisions_to_foreground(door, foreground)
 	
 	if foreground:
 		is_connected_right = false
@@ -205,6 +209,7 @@ func set_puzzle_piece_collisions_to_foreground(foreground : bool):
 		is_connected_top = false
 
 func set_collisions_to_foreground(node : CollisionObject2D, foreground : bool):
+	if node == null : return
 	node = node as CollisionObject2D
 	if node == null : return
 	node.set_collision_layer_value(4, foreground)
