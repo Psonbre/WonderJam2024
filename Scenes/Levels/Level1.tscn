@@ -15,20 +15,20 @@ zoom = Vector2(1.135, 1.135)
 
 [node name="Player" parent="." instance=ExtResource("1_q7mb7")]
 z_index = 11
-position = Vector2(149, 285)
+position = Vector2(145, 336)
 scale = Vector2(1, 1)
 
 [node name="PuzzlePiece" parent="." instance=ExtResource("2_o2emm")]
-position = Vector2(155, 311)
+position = Vector2(157, 354)
 
 [node name="PuzzlePiece2" parent="." instance=ExtResource("3_pbm8q")]
-position = Vector2(845, 299)
+position = Vector2(483, 324)
 
 [node name="PuzzlePiece3" parent="." instance=ExtResource("4_g6q54")]
-position = Vector2(496, 312)
+position = Vector2(832, 330)
 
 [node name="LevelName" type="Label" parent="."]
-z_index = -30
+z_index = 30
 offset_left = 358.0
 offset_top = 48.0
 offset_right = 470.0
@@ -36,4 +36,37 @@ offset_bottom = 71.0
 scale = Vector2(2.71, 2.71)
 theme_override_fonts/font = ExtResource("7_8iyfl")
 text = "Level 1"
+script = ExtResource("8_8nxnl")
+
+[node name="LevelName2" type="Label" parent="."]
+z_index = 30
+offset_left = 44.0
+offset_top = 130.0
+offset_right = 236.0
+offset_bottom = 153.0
+scale = Vector2(1.26, 1.26)
+theme_override_fonts/font = ExtResource("7_8iyfl")
+text = "WASD to move"
+script = ExtResource("8_8nxnl")
+
+[node name="LevelName4" type="Label" parent="."]
+z_index = 30
+offset_left = 265.0
+offset_top = 506.0
+offset_right = 633.0
+offset_bottom = 529.0
+scale = Vector2(1.26, 1.26)
+theme_override_fonts/font = ExtResource("7_8iyfl")
+text = "Drag and drop the piece"
+script = ExtResource("8_8nxnl")
+
+[node name="LevelName3" type="Label" parent="."]
+z_index = 30
+offset_left = 721.0
+offset_top = 136.0
+offset_right = 887.0
+offset_bottom = 159.0
+scale = Vector2(1.545, 1.545)
+theme_override_fonts/font = ExtResource("7_8iyfl")
+text = "R to reset"
 script = ExtResource("8_8nxnl")
