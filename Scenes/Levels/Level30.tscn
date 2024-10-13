@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bkswcloifnw1d"]
+[gd_scene load_steps=5 format=3 uid="uid://de8wi85ktjgwc"]
 
-[ext_resource type="PackedScene" uid="uid://didnny34wnbij" path="res://Scenes/player2.tscn" id="1_854f3"]
+[ext_resource type="PackedScene" path="res://Scenes/player2.tscn" id="1_854f3"]
 [ext_resource type="PackedScene" uid="uid://m578c0i20qpm" path="res://Scenes/PuzzlePieces/Medievales/puzzle_piece1.tscn" id="2_hs81a"]
 [ext_resource type="FontFile" uid="uid://b51e4e1htly8h" path="res://Assets/Fonts/PressStart2P-Regular.ttf" id="3_dejw3"]
 [ext_resource type="Script" path="res://Scripts/level_name.gd" id="4_wg3vu"]
