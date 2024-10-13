@@ -31,12 +31,14 @@ func _physics_process(delta):
 		if (velocity.x  > 0) : animated_sprite_2d.flip_h = false
 		elif (velocity.x < 0) : animated_sprite_2d.flip_h = true
 		animated_sprite_2d.play("Moving");
+		SubsystemManager.get_sound_manager().play_sound("res://Assets/Sounds/walk.ogg", -3)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		if is_on_floor() : animated_sprite_2d.play("Idle");
 
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
 		animated_sprite_2d.play("Jump");
+		SubsystemManager.get_sound_manager().play_sound("res://Assets/Sounds/jump.ogg", -2)
 		velocity.y = JUMP_VELOCITY
 
 	move_and_slide()
