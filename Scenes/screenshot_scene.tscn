@@ -1,4 +1,4 @@
-[gd_scene load_steps=139 format=4 uid="uid://crcj83r4blwky"]
+[gd_scene load_steps=138 format=4 uid="uid://crcj83r4blwky"]
 
 [ext_resource type="Shader" path="res://Scenes/vortex.gdshader" id="1_qkvpe"]
 [ext_resource type="Texture2D" uid="uid://cph5l5ltrh8xo" path="res://icon.svg" id="2_ofyc2"]
@@ -60,7 +60,6 @@
 [ext_resource type="Texture2D" uid="uid://bxth0eyta1rxa" path="res://Assets/Sprites/Pirate/1-Player-Bomb Guy/2-Run/12.png" id="58_mk8p2"]
 [ext_resource type="Texture2D" uid="uid://brdkfwkay6lb5" path="res://Assets/Sprites/Pirate/1-Player-Bomb Guy/2-Run/13.png" id="59_gjxhs"]
 [ext_resource type="Texture2D" uid="uid://bfmdnx6c3b3d1" path="res://Assets/Sprites/Pirate/1-Player-Bomb Guy/2-Run/14.png" id="60_c4qbg"]
-[ext_resource type="Script" path="res://Scripts/player.gd" id="61_y1bqs"]
 [ext_resource type="Texture2D" uid="uid://g8tky0iwibad" path="res://Assets/Sprites/Sci-fi/png/1x/xeno-grunt-idle/xeno-grunt-idle1.png" id="62_3ufg7"]
 [ext_resource type="Texture2D" uid="uid://b27j350jq3fj4" path="res://Assets/Sprites/Sci-fi/png/1x/xeno-grunt-jumping/xeno-grunt-jumping.png" id="63_f5217"]
 [ext_resource type="Texture2D" uid="uid://bi5scemtnclaa" path="res://Assets/Sprites/Sci-fi/png/1x/xeno-grunt-run/xeno-grunt-run1.png" id="64_y3bsc"]
@@ -77,9 +76,13 @@ shader_parameter/color_speed = 0.01
 shader_parameter/color_value = 0.537
 
 [sub_resource type="LabelSettings" id="LabelSettings_b02by"]
+line_spacing = 25.33
 font = ExtResource("3_rm6tu")
 font_size = 64
-outline_size = 10
+outline_size = 25
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 31
+shadow_color = Color(0, 0, 0, 0.301961)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_812v4"]
 size = Vector2(200, 200)
@@ -115,7 +118,7 @@ size = Vector2(149, 164)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_20ux4"]
 shader = ExtResource("5_71k32")
-shader_parameter/max_line_width = 4.0
+shader_parameter/max_line_width = 21.985
 shader_parameter/min_line_width = 1.0
 shader_parameter/freq = 3.0
 shader_parameter/block_size = 20.0
@@ -950,6 +953,8 @@ size = Vector2(100, 101)
 [node name="Node2D" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 121)
+zoom = Vector2(0.705, 0.705)
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -70
@@ -961,19 +966,27 @@ texture = ExtResource("2_ofyc2")
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 9.0
+offset_top = 325.0
+offset_right = 49.0
+offset_bottom = 365.0
 
 [node name="Piece" type="Label" parent="Control"]
 z_index = 105
 layout_mode = 0
-offset_left = -386.0
-offset_top = -287.0
-offset_right = 777.0
-offset_bottom = -77.0
-scale = Vector2(0.66, 0.661112)
+offset_left = -660.0
+offset_top = -326.0
+offset_right = 503.0
+offset_bottom = -116.0
+scale = Vector2(1.124, 1.126)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 50
+theme_override_constants/shadow_offset_x = 145
+theme_override_constants/shadow_offset_y = 80
+theme_override_fonts/font = ExtResource("3_rm6tu")
 theme_override_font_sizes/font_size = 1
-text = "Piece by piece"
+text = "Piece 
+by piece"
 label_settings = SubResource("LabelSettings_b02by")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1084,6 +1097,7 @@ material = SubResource("ShaderMaterial_20ux4")
 texture = ExtResource("4_npdlu")
 
 [node name="SpriteMovingOutline" type="Sprite2D" parent="PuzzlePiece/Sprite"]
+visible = false
 clip_children = 2
 z_index = -5
 material = SubResource("ShaderMaterial_hs13t")
@@ -1246,6 +1260,7 @@ material = SubResource("ShaderMaterial_20ux4")
 texture = ExtResource("15_ro0p1")
 
 [node name="SpriteMovingOutline" type="Sprite2D" parent="PuzzlePiece2/Sprite"]
+visible = false
 clip_children = 2
 z_index = -5
 material = SubResource("ShaderMaterial_hs13t")
@@ -1417,6 +1432,7 @@ material = SubResource("ShaderMaterial_20ux4")
 texture = ExtResource("16_gmdjb")
 
 [node name="SpriteMovingOutline" type="Sprite2D" parent="PuzzlePiece3/Sprite"]
+visible = false
 clip_children = 2
 z_index = -5
 material = SubResource("ShaderMaterial_hs13t")
@@ -1578,7 +1594,6 @@ shape = SubResource("RectangleShape2D_wxsww")
 z_index = 11
 position = Vector2(-76, 15)
 scale = Vector2(1.5, 1.5)
-script = ExtResource("61_y1bqs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PuzzlePiece4/Player"]
 shape = SubResource("CircleShape2D_w6gip")
@@ -1607,6 +1622,7 @@ visible = false
 clip_children = 2
 z_index = -5
 material = SubResource("ShaderMaterial_hs13t")
+position = Vector2(0.851426, 0)
 texture = ExtResource("65_iqwal")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="PuzzlePiece4/Sprite"]
