@@ -1,0 +1,98 @@
+[gd_scene load_steps=5 format=3 uid="uid://bd6ixl16aidsv"]
+
+[ext_resource type="Script" path="res://Scripts/finalPieces.gd" id="3_56dvj"]
+[ext_resource type="FontFile" uid="uid://b51e4e1htly8h" path="res://Assets/Fonts/PressStart2P-Regular.ttf" id="3_af5u1"]
+[ext_resource type="PackedScene" uid="uid://bhycqxrb32tct" path="res://Scenes/PuzzlePieces/FinalPuzzlePieceTemplate.tscn" id="3_k2u3e"]
+[ext_resource type="Script" path="res://Scripts/level_name.gd" id="4_xp18x"]
+
+[node name="Level" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+zoom = Vector2(1.135, 1.135)
+
+[node name="LevelName" type="Label" parent="."]
+z_index = -30
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 246.0
+offset_top = 7.0
+offset_right = 422.0
+offset_bottom = 30.0
+grow_horizontal = 0
+scale = Vector2(2.71, 2.71)
+theme_override_fonts/font = ExtResource("3_af5u1")
+text = "Bonus level"
+horizontal_alignment = 1
+script = ExtResource("4_xp18x")
+
+[node name="LevelName2" type="Label" parent="."]
+z_index = -30
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 740.0
+offset_top = 545.0
+offset_right = 1012.0
+offset_bottom = 568.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("3_af5u1")
+text = "Press ESC to exit"
+horizontal_alignment = 1
+script = ExtResource("4_xp18x")
+
+[node name="piecesCaught" type="Label" parent="."]
+z_index = -30
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 269.0
+offset_top = 72.0
+offset_right = 477.0
+offset_bottom = 95.0
+grow_horizontal = 0
+scale = Vector2(2, 2)
+theme_override_fonts/font = ExtResource("3_af5u1")
+text = "Pieces : 0/12"
+horizontal_alignment = 1
+script = ExtResource("4_xp18x")
+
+[node name="Pieces" type="Node" parent="."]
+script = ExtResource("3_56dvj")
+
+[node name="PuzzlePiece" parent="Pieces" instance=ExtResource("3_k2u3e")]
+visible = false
+position = Vector2(746, 411)
+
+[node name="PuzzlePiece9" parent="Pieces" instance=ExtResource("3_k2u3e")]
+visible = false
+position = Vector2(874, 591)
+
+[node name="PuzzlePiece8" parent="Pieces" instance=ExtResource("3_k2u3e")]
+visible = false
+position = Vector2(1082, 451)
+
+[node name="PuzzlePiece2" parent="Pieces" instance=ExtResource("3_k2u3e")]
+visible = false
+position = Vector2(565, 241)
+
+[node name="PuzzlePiece5" parent="Pieces" instance=ExtResource("3_k2u3e")]
+visible = false
+position = Vector2(565, 241)
+
+[node name="PuzzlePiece7" parent="Pieces" instance=ExtResource("3_k2u3e")]
+visible = false
+position = Vector2(428, 488)
+
+[node name="PuzzlePiece6" parent="Pieces" instance=ExtResource("3_k2u3e")]
+visible = false
+position = Vector2(171, 266)
+
+[node name="PuzzlePiece3" parent="Pieces" instance=ExtResource("3_k2u3e")]
+visible = false
+position = Vector2(884, 126)
+
+[node name="PuzzlePiece4" parent="Pieces" instance=ExtResource("3_k2u3e")]
+visible = false
+position = Vector2(884, 126)

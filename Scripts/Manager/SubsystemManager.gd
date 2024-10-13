@@ -5,6 +5,7 @@ static var instance: SubsystemManager = null
 static var level_manager: LevelManager = null
 static var music_manager: MusicManager = null
 static var sound_manager: SoundManager = null
+static var collectible_manager: CollectibleManager = null
 
 
 # Initialize the singleton instance
@@ -41,3 +42,9 @@ static func get_sound_manager() -> SoundManager:
 		sound_manager = sound_manager_scene.instantiate()
 		get_SubsystemManager().root.add_child(sound_manager)
 	return sound_manager
+	
+# Get the CollectibleManager instance
+static func get_collectible_manager() -> CollectibleManager:
+	if collectible_manager == null:
+		collectible_manager = CollectibleManager.new()
+	return collectible_manager

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b0c43sr0v666w" path="res://Scenes/PuzzlePieces/PuzzlePieceTemplate.tscn" id="1_7lnia"]
 [ext_resource type="Texture2D" uid="uid://cg8scj7a1glhu" path="res://Assets/pieces_sprites/piece (2).png" id="2_aty4o"]
-[ext_resource type="PackedScene" uid="uid://01ln0a63bsiq" path="res://Scenes/door.tscn" id="3_swkhg"]
+[ext_resource type="PackedScene" uid="uid://dhlcjmkh6dl43" path="res://Scenes/door.tscn" id="3_swkhg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lhbld"]
 size = Vector2(201, 49)
