@@ -16,7 +16,6 @@ zoom = Vector2(1.135, 1.135)
 [node name="Player" parent="." instance=ExtResource("1_q7mb7")]
 z_index = 11
 position = Vector2(145, 336)
-scale = Vector2(1, 1)
 
 [node name="PuzzlePiece" parent="." instance=ExtResource("2_o2emm")]
 position = Vector2(157, 354)
