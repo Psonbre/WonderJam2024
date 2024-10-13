@@ -2998,6 +2998,9 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 script = ExtResource("7_1fm4w")
+vertical_speed = 0.25
+vertical_intensity = 10.0
+horizontal_speed = 0.5
 
 [node name="piece" type="Sprite2D" parent="MainMenu/MainMenu/Piece"]
 modulate = Color(1.49205e-06, 0.473994, 0.53103, 1)
@@ -3020,6 +3023,9 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 script = ExtResource("7_1fm4w")
+vertical_speed = 0.25
+vertical_intensity = 10.0
+horizontal_speed = 0.5
 
 [node name="piece" type="Sprite2D" parent="MainMenu/MainMenu/By"]
 modulate = Color(1.49205e-06, 0.473994, 0.53103, 1)
@@ -3042,6 +3048,9 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 script = ExtResource("7_1fm4w")
+vertical_speed = 0.25
+vertical_intensity = 10.0
+horizontal_speed = 0.5
 
 [node name="piece" type="Sprite2D" parent="MainMenu/MainMenu/Piece1"]
 modulate = Color(1.49205e-06, 0.473994, 0.53103, 1)
@@ -3058,9 +3067,8 @@ offset_top = 357.0
 offset_right = 937.0
 offset_bottom = 402.0
 script = ExtResource("7_1fm4w")
-vertical_speed = 1.0
-vertical_intensity = 5
-horizontal_intensity = 2
+vertical_intensity = 7.0
+horizontal_speed = 0.25
 
 [node name="Start" type="Button" parent="MainMenu/MainMenu/CenterContainer"]
 custom_minimum_size = Vector2(210, 45)
@@ -3078,9 +3086,8 @@ offset_top = 429.0
 offset_right = 937.0
 offset_bottom = 474.0
 script = ExtResource("7_1fm4w")
-vertical_speed = 1.0
-vertical_intensity = 5
-horizontal_intensity = 2
+vertical_intensity = 7.0
+horizontal_speed = 0.25
 
 [node name="Credits" type="Button" parent="MainMenu/MainMenu/CenterContainer2"]
 custom_minimum_size = Vector2(210, 45)
@@ -3098,9 +3105,8 @@ offset_top = 512.0
 offset_right = 937.0
 offset_bottom = 557.0
 script = ExtResource("7_1fm4w")
-vertical_speed = 1.0
-vertical_intensity = 5
-horizontal_intensity = 2
+vertical_intensity = 7.0
+horizontal_speed = 0.25
 
 [node name="Exit" type="Button" parent="MainMenu/MainMenu/CenterContainer3"]
 custom_minimum_size = Vector2(210, 45)

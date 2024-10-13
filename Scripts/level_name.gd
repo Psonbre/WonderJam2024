@@ -1,8 +1,9 @@
+class_name level_name
 extends Control
 
 @export var vertical_speed = 0.5
-@export var vertical_intensity = 20
-@export var horizontal_speed = 1
+@export var vertical_intensity = 20.0
+@export var horizontal_speed = 1.0
 @export var horizontal_intensity = 15
 
 var start_position

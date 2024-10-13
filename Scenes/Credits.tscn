@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b5ui348xrja2j"]
+[gd_scene load_steps=6 format=3 uid="uid://b5ui348xrja2j"]
 
 [ext_resource type="Script" path="res://Scripts/Buttons/BackScript.gd" id="1_fll2r"]
 [ext_resource type="FontFile" uid="uid://b51e4e1htly8h" path="res://Assets/Fonts/PressStart2P-Regular.ttf" id="2_yqpi3"]
+[ext_resource type="Script" path="res://Scripts/level_name.gd" id="3_xtxaf"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_56lap"]
 font = ExtResource("2_yqpi3")
@@ -32,8 +33,9 @@ offset_bottom = 113.0
 text = "Credits"
 label_settings = SubResource("LabelSettings_56lap")
 horizontal_alignment = 1
+script = ExtResource("3_xtxaf")
 
-[node name="Button" type="Button" parent="Credits"]
+[node name="Back" type="Button" parent="Credits"]
 layout_mode = 0
 offset_left = 7.0
 offset_top = 12.0
@@ -46,14 +48,18 @@ script = ExtResource("1_fll2r")
 
 [node name="Gamejam" type="VBoxContainer" parent="Credits"]
 layout_mode = 2
-offset_left = 112.0
-offset_top = 597.0
-offset_right = 1072.0
-offset_bottom = 642.0
+offset_left = 116.0
+offset_top = 570.0
+offset_right = 1076.0
+offset_bottom = 615.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/separation = 20
 alignment = 1
+script = ExtResource("3_xtxaf")
+vertical_speed = 0.25
+vertical_intensity = 10.0
+horizontal_speed = 0.5
 
 [node name="SubTitle" type="Label" parent="Credits/Gamejam"]
 layout_mode = 2
@@ -76,6 +82,10 @@ offset_right = 662.0
 offset_bottom = 849.0
 scale = Vector2(0.8, 0.8)
 theme_override_constants/separation = 20
+script = ExtResource("3_xtxaf")
+vertical_speed = 0.25
+vertical_intensity = 10.0
+horizontal_speed = 0.5
 
 [node name="SubTitle" type="Label" parent="Credits/Music"]
 layout_mode = 2
@@ -141,6 +151,10 @@ offset_right = 1173.0
 offset_bottom = 272.0
 scale = Vector2(0.8, 0.8)
 theme_override_constants/separation = 20
+script = ExtResource("3_xtxaf")
+vertical_speed = 0.25
+vertical_intensity = 10.0
+horizontal_speed = 0.5
 
 [node name="SubTitle" type="Label" parent="Credits/Music2"]
 layout_mode = 2
@@ -172,6 +186,10 @@ offset_right = 579.0
 offset_bottom = 301.0
 scale = Vector2(0.8, 0.8)
 theme_override_constants/separation = 20
+script = ExtResource("3_xtxaf")
+vertical_speed = 0.25
+vertical_intensity = 10.0
+horizontal_speed = 0.5
 metadata/_edit_use_anchors_ = true
 
 [node name="SubTitle" type="Label" parent="Credits/Game"]
@@ -226,6 +244,10 @@ offset_right = 1103.0
 offset_bottom = 805.0
 scale = Vector2(0.8, 0.8)
 theme_override_constants/separation = 20
+script = ExtResource("3_xtxaf")
+vertical_speed = 0.25
+vertical_intensity = 10.0
+horizontal_speed = 0.5
 
 [node name="SubTitle" type="Label" parent="Credits/Assets"]
 layout_mode = 2
@@ -303,4 +325,4 @@ text = "Oubliette - Safwyl"
 underline = 1
 uri = "https://safwyl.itch.io/oubliette-tileset"
 
-[connection signal="pressed" from="Credits/Button" to="Credits/Button" method="_on_pressed"]
+[connection signal="pressed" from="Credits/Back" to="Credits/Back" method="_on_pressed"]
