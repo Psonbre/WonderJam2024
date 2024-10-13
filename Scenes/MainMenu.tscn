@@ -3116,6 +3116,7 @@ layout_mode = 2
 focus_mode = 0
 theme_override_fonts/font = ExtResource("5_jyjwq")
 theme_override_font_sizes/font_size = 24
+disabled = true
 text = "Exit"
 script = ExtResource("2_dbrev")
 
