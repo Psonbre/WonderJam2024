@@ -1,0 +1,106 @@
+[gd_scene load_steps=11 format=4 uid="uid://crcj83r4blwky"]
+
+[ext_resource type="Shader" path="res://Scenes/vortex.gdshader" id="1_qkvpe"]
+[ext_resource type="Texture2D" uid="uid://cph5l5ltrh8xo" path="res://icon.svg" id="2_ofyc2"]
+[ext_resource type="FontFile" uid="uid://b51e4e1htly8h" path="res://Assets/Fonts/PressStart2P-Regular.ttf" id="3_rm6tu"]
+[ext_resource type="PackedScene" uid="uid://c4m4gojj5q2o4" path="res://Scenes/PuzzlePieces/Medievales/puzzle_piece13.tscn" id="4_q16tm"]
+[ext_resource type="PackedScene" uid="uid://cxvwjjbxjksy1" path="res://Scenes/player2.tscn" id="5_u8jpt"]
+[ext_resource type="PackedScene" uid="uid://ddfxxvwr082se" path="res://Scenes/PuzzlePieces/Oubliettes/puzzle_piece4.tscn" id="6_5rxkl"]
+[ext_resource type="PackedScene" uid="uid://fjqeivlxjcr1" path="res://Scenes/player3.tscn" id="7_j7bvh"]
+[ext_resource type="PackedScene" uid="uid://bqlnawjb534yd" path="res://Scenes/PuzzlePieces/Pirates/puzzle_piece13.tscn" id="8_34vde"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mjt5i"]
+shader = ExtResource("1_qkvpe")
+shader_parameter/bottom_color = Color(0, 0, 0, 1)
+shader_parameter/wave_amp = 0.011
+shader_parameter/wave_size = 1.0
+shader_parameter/wave_time_mul = 0.271
+shader_parameter/total_phases = 40
+shader_parameter/color_speed = 0.01
+shader_parameter/color_value = 0.537
+
+[sub_resource type="LabelSettings" id="LabelSettings_b02by"]
+font = ExtResource("3_rm6tu")
+font_size = 64
+outline_size = 10
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -70
+material = SubResource("ShaderMaterial_mjt5i")
+position = Vector2(0, -2)
+scale = Vector2(22.9844, 12.9844)
+texture = ExtResource("2_ofyc2")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Piece" type="Label" parent="Control"]
+z_index = 105
+offset_left = -386.0
+offset_top = -287.0
+offset_right = 777.0
+offset_bottom = -77.0
+scale = Vector2(0.66, 0.661112)
+theme_override_font_sizes/font_size = 1
+text = "Piece by piece"
+label_settings = SubResource("LabelSettings_b02by")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="PuzzlePiece" parent="." instance=ExtResource("4_q16tm")]
+position = Vector2(-152, -33)
+scale = Vector2(1.5, 1.5)
+script = null
+
+[node name="SpriteMovingOutline" parent="PuzzlePiece/Sprite" index="1"]
+visible = true
+
+[node name="Player" parent="PuzzlePiece/Sprite" index="3" instance=ExtResource("5_u8jpt")]
+position = Vector2(-12.4335, -38.012)
+scale = Vector2(2.63837, 2.63837)
+script = null
+
+[node name="PuzzlePiece2" parent="." instance=ExtResource("6_5rxkl")]
+position = Vector2(149, -34)
+scale = Vector2(1.5, 1.5)
+script = null
+
+[node name="SpriteMovingOutline" parent="PuzzlePiece2/Sprite" index="1"]
+visible = true
+
+[node name="Background" parent="PuzzlePiece2/Sprite/SubViewportContainer/SubViewport" index="0"]
+tile_map_data = PackedByteArray("AAADAAMABwABAAYAAAADAAQABwABAAYAAAAEAAQABwABAAYAAAAEAAMABwABAAYAAAAFAAMABwABAAYAAAAFAAQABwABAAYAAAAFAAUABwABAAYAAAAEAAUABwABAAYAAAADAAUABwABAAYAAAACAAUABwABAAYAAAABAAUABwABAAYAAAABAAQABwABAAYAAAABAAMABwABAAYAAAAAAAQAAAAEAAEAAAACAAQABwABAAYAAAACAAMABwABAAYAAAACAAIABwABAAYAAAADAAIABwABAAYAAAAEAAIABwABAAYAAAAFAAIABwABAAYAAAAEAAEABwABAAYAAAADAAEABwABAAYAAAACAAEABwABAAYAAAABAAIABwABAAYAAAACAAYABwABAAYAAAADAAYABwABAAYAAAAEAAYABwABAAYAAAAFAAYABwABAAYAAAABAAYABwABAAYAAAAAAAYAAAAEAAEAAAAGAAYABwABAAYAAAAGAAUABwABAAYAAAAGAAQABwABAAYAAAAGAAMABwABAAYAAAAGAAIAAAAEAAEAAAAHAAYAAAAEAAEAAAAHAAUAAAAEAAEAAAAGAAEAAAAEAAEAAAAFAAEABwABAAYAAAABAAEABwABAAYAAAAAAAEABwAGAAIAAAD//wEAAAAEAAEAAAD//wMAAAAEAAEAAAAFAAAAAAAEAAEAAAAGAAAAAAAEAAEAAAAAAAUAAAAEAAEAAAA=")
+
+[node name="Foreground" parent="PuzzlePiece2/Sprite/SubViewportContainer/SubViewport" index="1"]
+tile_map_data = PackedByteArray("AAACAAQABwAFAAEAAAABAAEABwAGAAIAAAACAAEABwABAAYAAAACAAUAAAABAAEAAAADAAUAAAABAAEAAAACAAMABwAFAAEAAAADAAMABwABAAIAAAD8////AwACAAEAAAD8//3/AwABAAEAAAACAAIABwAFAAEAAAADAAIABwABAAIAAAA=")
+
+[node name="Player" parent="PuzzlePiece2" instance=ExtResource("7_j7bvh")]
+position = Vector2(25.3333, -51.3333)
+scale = Vector2(1.2, 1.2)
+script = null
+
+[node name="AnimatedSprite2D" parent="PuzzlePiece2/Player" index="1"]
+animation = &"Jump"
+frame_progress = 0.0
+
+[node name="PuzzlePiece3" parent="." instance=ExtResource("8_34vde")]
+position = Vector2(-151, 293)
+scale = Vector2(1.5, 1.5)
+script = null
+
+[node name="SpriteMovingOutline" parent="PuzzlePiece3/Sprite" index="1"]
+visible = true
+
+[editable path="PuzzlePiece"]
+[editable path="PuzzlePiece/Sprite/Player"]
+[editable path="PuzzlePiece2"]
+[editable path="PuzzlePiece2/Player"]
+[editable path="PuzzlePiece3"]
