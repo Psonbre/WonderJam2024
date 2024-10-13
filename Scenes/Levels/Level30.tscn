@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bkswcloifnw1d"]
+
+[ext_resource type="PackedScene" uid="uid://didnny34wnbij" path="res://Scenes/player2.tscn" id="1_854f3"]
+[ext_resource type="PackedScene" uid="uid://m578c0i20qpm" path="res://Scenes/PuzzlePieces/Medievales/puzzle_piece1.tscn" id="2_hs81a"]
+[ext_resource type="FontFile" uid="uid://b51e4e1htly8h" path="res://Assets/Fonts/PressStart2P-Regular.ttf" id="3_dejw3"]
+[ext_resource type="Script" path="res://Scripts/level_name.gd" id="4_wg3vu"]
+
+[node name="Level" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+zoom = Vector2(1.135, 1.135)
+
+[node name="Player" parent="." instance=ExtResource("1_854f3")]
+position = Vector2(227, 290)
+scale = Vector2(1, 1)
+
+[node name="PuzzlePiece" parent="." instance=ExtResource("2_hs81a")]
+position = Vector2(242, 317)
+
+[node name="LevelName" type="Label" parent="."]
+z_index = -30
+offset_left = 358.0
+offset_top = 48.0
+offset_right = 470.0
+offset_bottom = 71.0
+scale = Vector2(2.71, 2.71)
+theme_override_fonts/font = ExtResource("3_dejw3")
+text = "Level 1"
+script = ExtResource("4_wg3vu")
