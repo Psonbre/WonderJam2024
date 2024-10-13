@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bd6ixl16aidsv"]
+[gd_scene load_steps=5 format=3 uid="uid://bd6ixl16aidsv"]
 
+[ext_resource type="Script" path="res://Scripts/finalPieces.gd" id="3_56dvj"]
 [ext_resource type="FontFile" uid="uid://b51e4e1htly8h" path="res://Assets/Fonts/PressStart2P-Regular.ttf" id="3_af5u1"]
 [ext_resource type="PackedScene" uid="uid://bhycqxrb32tct" path="res://Scenes/PuzzlePieces/FinalPuzzlePieceTemplate.tscn" id="3_k2u3e"]
 [ext_resource type="Script" path="res://Scripts/level_name.gd" id="4_xp18x"]
@@ -26,29 +27,41 @@ text = "Bonus level"
 horizontal_alignment = 1
 script = ExtResource("4_xp18x")
 
-[node name="PuzzlePiece" parent="." instance=ExtResource("3_k2u3e")]
+[node name="Pieces" type="Node" parent="."]
+script = ExtResource("3_56dvj")
+
+[node name="PuzzlePiece" parent="Pieces" instance=ExtResource("3_k2u3e")]
+visible = false
 position = Vector2(746, 411)
 
-[node name="PuzzlePiece9" parent="." instance=ExtResource("3_k2u3e")]
+[node name="PuzzlePiece9" parent="Pieces" instance=ExtResource("3_k2u3e")]
+visible = false
 position = Vector2(874, 591)
 
-[node name="PuzzlePiece8" parent="." instance=ExtResource("3_k2u3e")]
+[node name="PuzzlePiece8" parent="Pieces" instance=ExtResource("3_k2u3e")]
+visible = false
 position = Vector2(1082, 451)
 
-[node name="PuzzlePiece2" parent="." instance=ExtResource("3_k2u3e")]
+[node name="PuzzlePiece2" parent="Pieces" instance=ExtResource("3_k2u3e")]
+visible = false
 position = Vector2(565, 241)
 
-[node name="PuzzlePiece5" parent="." instance=ExtResource("3_k2u3e")]
+[node name="PuzzlePiece5" parent="Pieces" instance=ExtResource("3_k2u3e")]
+visible = false
 position = Vector2(565, 241)
 
-[node name="PuzzlePiece7" parent="." instance=ExtResource("3_k2u3e")]
+[node name="PuzzlePiece7" parent="Pieces" instance=ExtResource("3_k2u3e")]
+visible = false
 position = Vector2(428, 488)
 
-[node name="PuzzlePiece6" parent="." instance=ExtResource("3_k2u3e")]
+[node name="PuzzlePiece6" parent="Pieces" instance=ExtResource("3_k2u3e")]
+visible = false
 position = Vector2(171, 266)
 
-[node name="PuzzlePiece3" parent="." instance=ExtResource("3_k2u3e")]
+[node name="PuzzlePiece3" parent="Pieces" instance=ExtResource("3_k2u3e")]
+visible = false
 position = Vector2(884, 126)
 
-[node name="PuzzlePiece4" parent="." instance=ExtResource("3_k2u3e")]
+[node name="PuzzlePiece4" parent="Pieces" instance=ExtResource("3_k2u3e")]
+visible = false
 position = Vector2(884, 126)
