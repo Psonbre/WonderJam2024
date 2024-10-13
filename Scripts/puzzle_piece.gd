@@ -127,7 +127,9 @@ func attempt_connection():
 	# Check left bound
 	other_piece = get_first_valid_overlap_in_bound(left_bound, "right")
 	if other_piece != null && !other_piece.is_dragging:
-		position = other_piece.position - Vector2(-200, 0)
+		if scale != default_scale:
+			SubsystemManager.get_sound_manager().play_sound("res://Assets/Sounds/pieceClick.ogg")
+		position = other_piece.position - Vector2(-200, 0)	
 		is_connected_left = true
 		other_piece.is_connected_right = true
 		scale = default_scale
@@ -138,6 +140,8 @@ func attempt_connection():
 	# Check right bound
 	other_piece = get_first_valid_overlap_in_bound(right_bound, "left")
 	if other_piece != null && !other_piece.is_dragging:
+		if scale != default_scale:
+			SubsystemManager.get_sound_manager().play_sound("res://Assets/Sounds/pieceClick.ogg")
 		position = other_piece.position - Vector2(200, 0)
 		is_connected_right = true
 		other_piece.is_connected_left = true
@@ -149,6 +153,8 @@ func attempt_connection():
 	# Check top bound
 	other_piece = get_first_valid_overlap_in_bound(top_bound, "bottom")
 	if other_piece != null && !other_piece.is_dragging:
+		if scale != default_scale:
+			SubsystemManager.get_sound_manager().play_sound("res://Assets/Sounds/pieceClick.ogg")
 		position = other_piece.position - Vector2(0, -200)
 		is_connected_top = true
 		other_piece.is_connected_bottom = true
@@ -160,6 +166,8 @@ func attempt_connection():
 	# Check bottom bound
 	other_piece = get_first_valid_overlap_in_bound(bottom_bound, "top")
 	if other_piece != null && !other_piece.is_dragging:
+		if scale != default_scale:
+			SubsystemManager.get_sound_manager().play_sound("res://Assets/Sounds/pieceClick.ogg")
 		position = other_piece.position - Vector2(0, 200)
 		is_connected_bottom = true
 		other_piece.is_connected_top = true
