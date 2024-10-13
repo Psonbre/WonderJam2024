@@ -1,10 +1,17 @@
 [gd_scene load_steps=2 format=3 uid="uid://5lbvsi7rf7ae"]
 
-[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_yfv25"]
+[ext_resource type="VideoStream" path="res://Assets/Neon-Polygons-Intro.ogv" id="1_rvbq6"]
 
 [node name="Intro" type="Node2D"]
 
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+zoom = Vector2(0.91, 0.91)
+
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
-stream = SubResource("VideoStreamTheora_yfv25")
+offset_left = -2.0
+offset_top = -3.0
+offset_right = 1278.0
+offset_bottom = 717.0
+stream = ExtResource("1_rvbq6")
+autoplay = true
