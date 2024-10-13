@@ -2961,8 +2961,8 @@ script = ExtResource("1_37ua5")
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -70
 material = SubResource("ShaderMaterial_d3ioe")
-position = Vector2(627.5, 296.5)
-scale = Vector2(21.7422, 11.9297)
+position = Vector2(707, 364)
+scale = Vector2(22.9844, 12.9844)
 texture = ExtResource("4_8b41y")
 
 [node name="Camera2D" type="Camera2D" parent="."]

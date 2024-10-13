@@ -26,6 +26,7 @@ func load_level(level_name):
 
 func load_main_menu():
 	if old_screen != null : return
+	if Player.current_level == 13 : Player.current_level = 1
 	old_screen = current_screen
 	current_screen = get_node("MainMenu")
 	%Camera2D.target_position = Vector2.ZERO
