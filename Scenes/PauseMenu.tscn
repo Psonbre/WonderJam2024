@@ -34,17 +34,16 @@ texture_normal = ExtResource("3_vgpg5")
 texture_hover = ExtResource("4_1nqlf")
 
 [node name="PausePanel" type="Control" parent="."]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="ColorRect" type="ColorRect" parent="PausePanel"]
 layout_mode = 2
-offset_left = -204.0
-offset_top = -175.0
-offset_right = -164.0
-offset_bottom = -135.0
+offset_left = -204.167
+offset_top = -175.833
+offset_right = -164.167
+offset_bottom = -135.833
 scale = Vector2(36.48, 21.4)
 color = Color(0, 0, 0, 0.588235)
 

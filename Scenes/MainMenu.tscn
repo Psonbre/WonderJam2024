@@ -14,7 +14,7 @@ shader_parameter/bottom_color = Color(0, 0, 0, 1)
 shader_parameter/wave_amp = 0.011
 shader_parameter/wave_size = 1.0
 shader_parameter/wave_time_mul = 0.271
-shader_parameter/total_phases = 20
+shader_parameter/total_phases = 40
 shader_parameter/color_speed = 0.01
 shader_parameter/color_value = 0.537
 
@@ -29,8 +29,8 @@ script = ExtResource("1_37ua5")
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -70
 material = SubResource("ShaderMaterial_d3ioe")
-position = Vector2(580.736, 324.736)
-scale = Vector2(9.16037, 5.16037)
+position = Vector2(627.5, 296.5)
+scale = Vector2(21.7422, 11.9297)
 texture = ExtResource("4_8b41y")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -51,9 +51,9 @@ metadata/_edit_horizontal_guides_ = [695.0]
 
 [node name="TitleLabel" type="Label" parent="MainMenu/MainMenu"]
 layout_mode = 2
-offset_left = 309.0
+offset_left = 310.0
 offset_top = 220.0
-offset_right = 844.0
+offset_right = 845.0
 offset_bottom = 308.0
 text = "Piece by Piece"
 label_settings = SubResource("LabelSettings_b18gn")

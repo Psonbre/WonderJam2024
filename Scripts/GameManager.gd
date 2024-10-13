@@ -12,7 +12,6 @@ func _ready():
 	add_child(credits_screen)
 
 func load_level(level_name):
-
 	var level : Node2D = load("res://Scenes/Levels/" + level_name + ".tscn").instantiate()
 	var new_cam : Camera2D = level.get_node("Camera2D")
 	%Camera2D.target_position = new_cam.global_position

@@ -3,10 +3,13 @@ extends CharacterBody2D
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const SPEED := 300.0
+const JUMP_VELOCITY := -400.0
 var overlapping_pieces = []
 var default_scale
+static var current_level := 1
+static var winning := false
+var winning_door
 
 func _ready():
 	default_scale = global_scale
@@ -17,14 +20,9 @@ func reset_proportions():
 	rotation = 0
 	
 func _physics_process(delta):
-	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	# Handle jump.
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("Left", "Right")
 	if direction:
 		velocity.x = direction * SPEED
@@ -62,5 +60,21 @@ func remove_overlapping_piece(piece : PuzzlePiece):
 		overlapping_pieces.remove_at(overlapping_pieces.find(piece))
 
 func clamp_position_to_piece(piece : PuzzlePiece):
-	#global_position = global_position.clamp(piece.global_position - Vector2(100 + 24 , 100 + 24), piece.global_position + Vector2(100 - 24,100 - 24))
 	return
+	
+func win(door):
+	if !winning :
+		winning_door = door
+		Player.winning = true
+		set_physics_process(false)
+
+func _process(delta):
+	if (winning) :
+		global_position = global_position.move_toward(winning_door.global_position, 10 * delta)
+		rotate(12 * delta)
+		global_scale = global_scale.move_toward(Vector2.ZERO, 1 * delta)
+		if global_scale.x <= 0.1 :
+			winning = false
+			current_level += 1
+			print("Level" + str(current_level))
+			get_tree().root.get_node("Game").load_level("Level" + str(current_level))
