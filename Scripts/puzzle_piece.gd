@@ -19,25 +19,25 @@ var has_attempted_connection_this_tick := false
 var door
 var collectible
 
-var is_connected_left := false :
+var is_connected_left_to :
 	set(value):
-		$PuzzlePiece/LeftCollider/CollisionShape2D.disabled = value
-		is_connected_left = value
+		$PuzzlePiece/LeftCollider/CollisionShape2D.disabled = value != null
+		is_connected_left_to = value
 		
-var is_connected_right := false :
+var is_connected_right_to :
 	set(value):
-		$PuzzlePiece/RightCollider/CollisionShape2D.disabled = value
-		is_connected_right = value
+		$PuzzlePiece/RightCollider/CollisionShape2D.disabled = value != null
+		is_connected_right_to = value
 		
-var is_connected_top := false :
+var is_connected_top_to :
 	set(value):
-		$PuzzlePiece/TopCollider/CollisionShape2D.disabled = value
-		is_connected_top = value
+		$PuzzlePiece/TopCollider/CollisionShape2D.disabled = value != null
+		is_connected_top_to = value
 				
-var is_connected_bottom := false :
+var is_connected_bottom_to :
 	set(value):
-		$PuzzlePiece/BottomCollider/CollisionShape2D.disabled = value
-		is_connected_bottom = value
+		$PuzzlePiece/BottomCollider/CollisionShape2D.disabled = value != null
+		is_connected_bottom_to = value
 
 var is_dragging := false
 static var global_dragging := false
@@ -80,13 +80,13 @@ func _process(delta):
 	has_attempted_connection_this_tick = false
 	
 func has_all_sides_connected():
-	if !is_connected_bottom && bottom_connection_slot != -2:
+	if is_connected_bottom_to == null && bottom_connection_slot != -2:
 		return false
-	if !is_connected_left && left_connection_slot != -2:
+	if is_connected_left_to == null && left_connection_slot != -2:
 		return false
-	if !is_connected_right && right_connection_slot != -2:
+	if is_connected_right_to == null && right_connection_slot != -2:
 		return false
-	if !is_connected_top && top_connection_slot != -2:
+	if is_connected_top_to == null && top_connection_slot != -2:
 		return false
 	return true
 
@@ -145,10 +145,10 @@ func attempt_connection():
 	if has_attempted_connection_this_tick: return
 	has_attempted_connection_this_tick = true
 	var other_piece
-	is_connected_bottom = false
-	is_connected_left = false
-	is_connected_right = false
-	is_connected_top = false
+	is_connected_bottom_to = null
+	is_connected_left_to = null
+	is_connected_right_to = null
+	is_connected_top_to = null
 	
 	# Check left bound
 	other_piece = get_first_valid_overlap_in_bound(left_bound, "right")
@@ -156,8 +156,8 @@ func attempt_connection():
 		if scale != default_scale:
 			SubsystemManager.get_sound_manager().play_sound("res://Assets/Sounds/piece_click.ogg", -10.0)
 		position = other_piece.position - Vector2(-200, 0)	
-		is_connected_left = true
-		other_piece.is_connected_right = true
+		is_connected_left_to = other_piece
+		other_piece.is_connected_right_to = self
 		scale = default_scale
 		rotation = 0
 		if has_node("PuzzlePiece/Content/Player"):
@@ -169,8 +169,8 @@ func attempt_connection():
 		if scale != default_scale:
 			SubsystemManager.get_sound_manager().play_sound("res://Assets/Sounds/piece_click.ogg", -10.0)
 		position = other_piece.position - Vector2(200, 0)
-		is_connected_right = true
-		other_piece.is_connected_left = true
+		is_connected_right_to = other_piece
+		other_piece.is_connected_left_to = self
 		scale = default_scale
 		rotation = 0
 		if has_node("PuzzlePiece/Content/Player"):
@@ -182,8 +182,8 @@ func attempt_connection():
 		if scale != default_scale:
 			SubsystemManager.get_sound_manager().play_sound("res://Assets/Sounds/piece_click.ogg", -10.0)
 		position = other_piece.position - Vector2(0, -200)
-		is_connected_top = true
-		other_piece.is_connected_bottom = true
+		is_connected_top_to = other_piece
+		other_piece.is_connected_bottom_to = self
 		scale = default_scale
 		rotation = 0
 		if has_node("PuzzlePiece/Content/Player"):
@@ -195,8 +195,8 @@ func attempt_connection():
 		if scale != default_scale:
 			SubsystemManager.get_sound_manager().play_sound("res://Assets/Sounds/piece_click.ogg", -10.0)
 		position = other_piece.position - Vector2(0, 200)
-		is_connected_bottom = true
-		other_piece.is_connected_top = true
+		is_connected_bottom_to = other_piece
+		other_piece.is_connected_top_to = self
 		scale = default_scale
 		rotation = 0
 		if has_node("PuzzlePiece/Content/Player"):
@@ -207,13 +207,13 @@ func get_first_valid_overlap_in_bound(bound : Area2D, compatible_side : String):
 	for area in overlapping_areas:
 		var puzzle_piece = area.get_node("../..")
 		if puzzle_piece is PuzzlePiece && puzzle_piece != self:
-			if compatible_side == "left" && !puzzle_piece.is_connected_left && right_connection_slot + puzzle_piece.left_connection_slot == 0:
+			if compatible_side == "left" && (puzzle_piece.is_connected_left_to == null || puzzle_piece.is_connected_left_to == self) && right_connection_slot + puzzle_piece.left_connection_slot == 0:
 				return puzzle_piece
-			if compatible_side == "right" && !puzzle_piece.is_connected_right && left_connection_slot + puzzle_piece.right_connection_slot == 0:
+			if compatible_side == "right" && (puzzle_piece.is_connected_right_to == null || puzzle_piece.is_connected_right_to == self) && left_connection_slot + puzzle_piece.right_connection_slot == 0:
 				return puzzle_piece
-			if compatible_side == "top" && !puzzle_piece.is_connected_top && bottom_connection_slot + puzzle_piece.top_connection_slot == 0:
+			if compatible_side == "top" && (puzzle_piece.is_connected_top_to == null || puzzle_piece.is_connected_top_to == self) && bottom_connection_slot + puzzle_piece.top_connection_slot == 0:
 				return puzzle_piece
-			if compatible_side == "bottom" && !puzzle_piece.is_connected_bottom && top_connection_slot + puzzle_piece.bottom_connection_slot == 0:
+			if compatible_side == "bottom" && (puzzle_piece.is_connected_bottom_to == null || puzzle_piece.is_connected_bottom_to == self) && top_connection_slot + puzzle_piece.bottom_connection_slot == 0:
 				return puzzle_piece
 	return null
 
@@ -238,10 +238,10 @@ func set_puzzle_piece_collisions_to_foreground(foreground : bool):
 	if foreground:
 		set_collisions_to_foreground(door, foreground)
 		set_collisions_to_foreground(collectible, foreground)
-		is_connected_right = false
-		is_connected_bottom = false
-		is_connected_left = false
-		is_connected_top = false
+		is_connected_right_to = null
+		is_connected_bottom_to = null
+		is_connected_left_to = null
+		is_connected_top_to = null
 	else:
 		await get_tree().physics_frame
 		await get_tree().physics_frame
