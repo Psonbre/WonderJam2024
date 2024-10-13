@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://vog163hik536"]
-
-[ext_resource type="PackedScene" uid="uid://dyrv4i083tx3b" path="res://Scenes/player.tscn" id="1_m0kxs"]
-
-[node name="Player" instance=ExtResource("1_m0kxs")]
-
-[node name="AnimatedSprite2D" parent="." index="1"]
-animation = &"Idle"
-frame_progress = 0.0

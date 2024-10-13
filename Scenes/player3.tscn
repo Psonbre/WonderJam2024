@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://6fjomqgplir1"]
+[gd_scene load_steps=10 format=3 uid="uid://fjqeivlxjcr1"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_p8pif"]
 [ext_resource type="Texture2D" uid="uid://btpc4xex0poeb" path="res://Assets/Sprites/Oubliette/oubliette_tileset.png" id="2_sh5ku"]
