@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://5lbvsi7rf7ae"]
+
+[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_yfv25"]
+
+[node name="Intro" type="Node2D"]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+stream = SubResource("VideoStreamTheora_yfv25")

@@ -10,6 +10,7 @@ var default_scale
 static var current_level := 1
 static var winning := false
 var winning_door
+static var has_collectible = false
 
 func _ready():
 	default_scale = global_scale
@@ -75,5 +76,6 @@ func _process(delta):
 		if global_scale.x <= 0.1 :
 			winning = false
 			current_level += 1
+			has_collectible = false
 			print("Level" + str(current_level))
 			get_tree().root.get_node("Game").load_level("Level" + str(current_level))

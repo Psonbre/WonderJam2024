@@ -4,19 +4,21 @@
 [ext_resource type="Texture2D" uid="uid://b8087iehkuxie" path="res://Assets/pieces_sprites/piece (13).png" id="1_tvbqm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5van3"]
+radius = 1.60078
 
-[node name="Collectible" type="Node2D"]
+[node name="Collectible" type="Area2D"]
 z_index = 10
-scale = Vector2(0.2, 0.2)
 script = ExtResource("1_eqgs7")
+vertical_intensity = 13.0
+horizontal_speed = 0.3
+horizontal_intensity = 10.0
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_tvbqm")
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(20, 20)
 shape = SubResource("CircleShape2D_5van3")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_tvbqm")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

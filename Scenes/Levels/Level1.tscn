@@ -22,7 +22,7 @@ scale = Vector2(1, 1)
 position = Vector2(155, 311)
 
 [node name="PuzzlePiece2" parent="." instance=ExtResource("3_pbm8q")]
-position = Vector2(840, 306)
+position = Vector2(845, 299)
 
 [node name="PuzzlePiece3" parent="." instance=ExtResource("4_g6q54")]
 position = Vector2(496, 312)
