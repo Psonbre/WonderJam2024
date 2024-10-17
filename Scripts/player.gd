@@ -7,7 +7,7 @@ const SPEED := 300.0
 const JUMP_VELOCITY := -400.0
 var overlapping_pieces = []
 var default_scale
-static var current_level := 13
+static var current_level := 1
 static var winning := false
 var winning_door
 static var has_collectible = false

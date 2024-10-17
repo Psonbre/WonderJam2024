@@ -1,7 +1,7 @@
 extends Node
 class_name CollectibleManager
 
-var nbOfPiecesCaught : int = 12
+var nbOfPiecesCaught : int = 0
 
 func add_piece() -> void:
 	nbOfPiecesCaught += 1
