@@ -7,7 +7,7 @@ const SPEED := 300.0
 const JUMP_VELOCITY := -400.0
 var overlapping_pieces = []
 var default_scale
-static var current_level := 1
+static var current_level := 13
 static var winning := false
 var winning_door
 static var has_collectible = false
@@ -77,5 +77,5 @@ func _process(delta):
 			winning = false
 			current_level += 1
 			has_collectible = false
-			print("Level" + str(current_level))
+			queue_free()
 			get_tree().root.get_node("Game").load_level("Level" + str(current_level))

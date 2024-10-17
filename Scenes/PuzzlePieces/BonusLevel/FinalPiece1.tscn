@@ -1,7 +1,6 @@
-[gd_scene load_steps=29 format=4 uid="uid://ds65x1m8r3247"]
+[gd_scene load_steps=28 format=4 uid="uid://ds65x1m8r3247"]
 
 [ext_resource type="Script" path="res://Scripts/bonus_puzzle_piece.gd" id="1_jll0q"]
-[ext_resource type="Texture2D" uid="uid://cp1jwkshqvg4t" path="res://Assets/pieces_sprites/piece.png" id="2_vrqfc"]
 [ext_resource type="Shader" path="res://Scenes/PuzzlePieces/PuzzleOutline.gdshader" id="3_28qvf"]
 [ext_resource type="Texture2D" uid="uid://cn2bp56y3pel0" path="res://Assets/pieces_sprites/piece (16).png" id="4_u6x8k"]
 [ext_resource type="Shader" path="res://Scenes/PuzzlePieces/PuzzleMovingOutline.gdshader" id="4_ul5wt"]
@@ -483,7 +482,7 @@ shape = SubResource("RectangleShape2D_wxsww")
 clip_children = 1
 z_index = 10
 scale = Vector2(0.783, 0.783)
-texture = ExtResource("2_vrqfc")
+texture = ExtResource("4_u6x8k")
 
 [node name="SpriteOutline" type="Sprite2D" parent="Sprite"]
 clip_children = 2

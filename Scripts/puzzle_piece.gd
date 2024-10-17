@@ -93,6 +93,7 @@ func has_all_sides_connected():
 
 func start_dragging():
 	if Player.winning : return
+	if get_tree().root.get_node("Game").old_screen != null : return
 	sprite_moving_outline.visible = true
 	z_index = 10
 	start_drag_position = position

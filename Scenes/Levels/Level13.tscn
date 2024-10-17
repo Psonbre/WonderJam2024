@@ -123,67 +123,56 @@ expand_mode = 1
 libraries = {
 "": SubResource("AnimationLibrary_pt6af")
 }
+speed_scale = 0.3
 
 [node name="Pieces" type="Node" parent="."]
 script = ExtResource("4_a3cfk")
 
 [node name="PuzzlePiece" parent="Pieces" instance=ExtResource("5_0r4j8")]
-visible = false
 position = Vector2(233, 854)
 ending_position = Vector2(622, 763)
 
 [node name="PuzzlePiece2" parent="Pieces" instance=ExtResource("6_6sr11")]
-visible = false
 position = Vector2(1706, 221)
 ending_position = Vector2(817, 763)
 
 [node name="PuzzlePiece3" parent="Pieces" instance=ExtResource("7_5h28n")]
-visible = false
 position = Vector2(1734, 829)
 ending_position = Vector2(1017, 763)
 
 [node name="PuzzlePiece4" parent="Pieces" instance=ExtResource("8_hvhen")]
-visible = false
 position = Vector2(1118, 919)
 ending_position = Vector2(1212, 763)
 
 [node name="PuzzlePiece5" parent="Pieces" instance=ExtResource("9_r63o0")]
-visible = false
 position = Vector2(434, 561)
 ending_position = Vector2(622, 567)
 
 [node name="PuzzlePiece6" parent="Pieces" instance=ExtResource("10_5ex1g")]
-visible = false
 position = Vector2(622, 895)
 ending_position = Vector2(817, 567)
 
 [node name="PuzzlePiece7" parent="Pieces" instance=ExtResource("11_gm7yx")]
-visible = false
 position = Vector2(1440, 819)
 ending_position = Vector2(1017, 567)
 
 [node name="PuzzlePiece8" parent="Pieces" instance=ExtResource("12_8er4o")]
-visible = false
 position = Vector2(1541, 508)
 ending_position = Vector2(1212, 567)
 
 [node name="PuzzlePiece9" parent="Pieces" instance=ExtResource("13_6fi1p")]
-visible = false
 position = Vector2(862, 681)
 ending_position = Vector2(622, 370)
 
 [node name="PuzzlePiece10" parent="Pieces" instance=ExtResource("14_qf8ds")]
-visible = false
 position = Vector2(168, 262)
 ending_position = Vector2(817, 370)
 
 [node name="PuzzlePiece11" parent="Pieces" instance=ExtResource("15_bylb2")]
-visible = false
 position = Vector2(774, 419)
 ending_position = Vector2(1017, 370)
 
 [node name="PuzzlePiece12" parent="Pieces" instance=ExtResource("16_gffsa")]
-visible = false
 position = Vector2(1203, 513)
 ending_position = Vector2(1212, 370)
 
@@ -191,7 +180,7 @@ ending_position = Vector2(1212, 370)
 autostart = true
 
 [node name="FinalImageTimer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 3.0
 one_shot = true
 
 [connection signal="timeout" from="Timer" to="Pieces" method="_on_timer_timeout"]

@@ -31,6 +31,7 @@ func checkIfPuzzleComplete() -> void:
 	puzzleCompleted()
 	
 func puzzleCompleted() -> void:
+	isPuzzleCompleted = true
 	movePuzzlePieces()
 
 func _on_timer_timeout() -> void:
@@ -46,7 +47,7 @@ func movePuzzlePieces() -> void:
 			# We just need to call the function directly, not store its return value
 			move_piece_to_end_position(piece)
 	
-	finalImageTimer.start(2)
+	finalImageTimer.start()
 
 func move_piece_to_end_position(piece: PuzzlePiece) -> void:
 	var ending_position = piece.ending_position  # Assuming ending_position is defined in PuzzlePiece
@@ -74,7 +75,6 @@ func move_piece(piece: PuzzlePiece, target_position: Vector2, duration: float) -
 
 	# Ensure the piece ends exactly at the target position
 	piece.position = target_position
-	print("Moved piece to ending position:", piece)
 
 # Helper function to wait for all coroutines to complete
 func wait_for_coroutines(coroutines: Array) -> void:
@@ -84,8 +84,8 @@ func wait_for_coroutines(coroutines: Array) -> void:
 func displayFinalimage() -> void:
 	texture.visible = true
 	animation.play("fade_in")
-	isPuzzleCompleted = true
 
 
 func _on_final_image_timer_timeout() -> void:
+	print("test")
 	displayFinalimage()
